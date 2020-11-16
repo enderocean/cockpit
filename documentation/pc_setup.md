@@ -70,7 +70,7 @@ Note. We are currently looking for solution to embed the flow in a desktop appli
 
 <br>
 
-## 2.0 Start control interface
+## 2.0 Online interface
 
 To use software with keyboard, open URL :
 
