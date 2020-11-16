@@ -1,0 +1,59 @@
+{
+	"arrosoir": {
+		"type": "bottle",
+		"objects": ["Packaged goods","Bottle"],
+		"labels": ["Bottle"],
+		"keywords": [
+			"Ring",
+			"Chat",
+			"Talk",
+			"Share"
+		]
+	},
+	"lessive": {
+		"type": "bottle",
+		"objects": ["Packaged goods","Bottle"],
+		"labels": ["Bottle"],
+		"keywords": [
+			"Arbre",
+			"Vert",
+			"litres",
+			"arbrevert",
+			"savon"
+		]
+	},
+	"biere": {
+		"type": "bottle",
+		"objects": ["Packaged goods","Bottle"],
+		"labels": ["Bottle"],
+		"keywords": [
+			"mascaret",
+			"Bière",
+			"Artisanale",
+			"Brune",
+			"Bio",
+			"houblon",
+			"75cl",
+			"estuaire",
+			"Composition"
+		]
+	},
+	"eau_plate": {
+		"type": "bottle",
+		"objects": ["Packaged goods","Bottle"],
+		"labels": ["Bottle"],
+		"keywords": [
+			"Vittel"
+		]
+	},
+	"eau_petillante": {
+		"type": "bottle",
+		"objects": ["Packaged goods","Bottle"],
+		"labels": ["Bottle"],
+		"keywords": [
+			"Badoit",
+			"Finement",
+			"Pétillante"
+		]
+	}
+}
