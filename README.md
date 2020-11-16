@@ -41,7 +41,7 @@ This window is then shared on the online server using WebRTC protocols.
 * [Pre-requisites](https://github.com/enderocean/cockpit/blob/main/documentation/prerequisites.md)
 * [Server Installation](https://github.com/enderocean/cockpit/blob/main/documentation/server_install.md)
 * [PC Setup](https://github.com/enderocean/cockpit/blob/main/documentation/pc_setup.md)
-* [Know issues](https://github.com/enderocean/cockpit/blob/main/documentation/known_issues.md)
+* [Known issues](https://github.com/enderocean/cockpit/blob/main/documentation/known_issues.md)
 * [Contributions](https://github.com/enderocean/cockpit/blob/main/contributions.md)
 * [Licence](https://github.com/enderocean/cockpit/blob/main/LICENSE.md)
 
