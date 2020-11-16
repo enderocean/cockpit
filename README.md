@@ -42,6 +42,6 @@ This window is then shared on the online server using WebRTC protocols.
 * [PC Setup](https://github.com/enderocean/cockpit/blob/main/documentation/pc_setup.md)
 * [Known issues](https://github.com/enderocean/cockpit/blob/main/documentation/known_issues.md)
 * [Contributions](https://github.com/enderocean/cockpit/blob/main/contributions.md)
-* [Licence](https://github.com/enderocean/cockpit/blob/main/LICENSE.md)
+* [License](https://github.com/enderocean/cockpit/blob/main/LICENSE)
 
 All the code is open-source, so you can contribute and evolve it as you want. Contact us for any support.
