@@ -38,11 +38,11 @@ This window is then shared on the online server using WebRTC protocols.
 
 ## 3. Key Links:
 
-* [Pre-requisites](https://github.com/enderocean/cockpit/documentation/prerequisites.md)
-* [Server Installation](https://github.com/enderocean/cockpit/documentation/server_install.md)
-* [PC Setup](https://github.com/enderocean/cockpit/documentation/pc_setup.md)
-* [Know issues](https://github.com/enderocean/cockpit/documentation/known_issues.md)
-* [Contributions](https://github.com/enderocean/cockpit/contributions.md)
-* [Licence](https://github.com/enderocean/cockpit/documentation/LICENSE.md)
+* [Pre-requisites](https://github.com/enderocean/cockpit/blob/main/documentation/prerequisites.md)
+* [Server Installation](https://github.com/enderocean/cockpit/blob/main/documentation/server_install.md)
+* [PC Setup](https://github.com/enderocean/cockpit/blob/main/documentation/pc_setup.md)
+* [Know issues](https://github.com/enderocean/cockpit/blob/main/documentation/known_issues.md)
+* [Contributions](https://github.com/enderocean/cockpit/blob/main/contributions.md)
+* [Licence](https://github.com/enderocean/cockpit/blob/main/LICENSE.md)
 
 All the code is open-source, so you can contribute and evolve it as you want. Contact us for any support.
