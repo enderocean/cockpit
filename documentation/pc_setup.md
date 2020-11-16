@@ -28,7 +28,7 @@ Process executes the following:
 
 ![ENDER OCEAN Cockpit Node-RED](https://github.com/enderocean/cockpit/raw/main/img/snapshot_nodered.png "ENDER OCEAN Cockpit Node-RED")
 
-You can [Import flow](https://) in your local instance.
+You can [Import flow](https://github.com/enderocean/cockpit/raw/main/nodered/flows.json) in your local instance.
 
 
 <br>
