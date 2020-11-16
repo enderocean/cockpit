@@ -20,4 +20,4 @@ Gamepad buttons are mapped to actions like below:
 
 <br>
 
-![ENDER OCEAN Cockpit Gamepad mapping](https://github.com/enderocean/cockpit/raw/main/img/mapping_gamepad.png "ENDER OCEAN Cockpit Gamepad mapping")
+![ENDER OCEAN Cockpit Gamepad mapping](https://github.com/enderocean/cockpit/raw/main/img/mapping_buttons.png "ENDER OCEAN Cockpit Gamepad mapping")
