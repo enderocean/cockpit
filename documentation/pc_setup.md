@@ -68,6 +68,7 @@ Replace "mydomain.com" with your own DNS.
 
 Note. We are currently looking for solution to embed the flow in a desktop application that can be shared through WebRTC properly. Today, we must share the whole desktop. Any suggestion ?
 
+<br>
 
 ## 2.0 Start control interface
 
