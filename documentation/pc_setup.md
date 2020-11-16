@@ -34,7 +34,7 @@ To share your screen, you need to configure the BlueROV2 camera at : 192.168.2.2
 <br>
 
 
-### 1.2.2 - GStreamer
+#### 1.2.2 - GStreamer
 
 Launch GStreamer command to display camera flow in a simple window:
 
