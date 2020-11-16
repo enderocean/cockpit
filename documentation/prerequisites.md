@@ -142,7 +142,8 @@ Edit file to expose freelan on port 12000 on Cloud server : /etc/freelan/key.con
         relay_mode_enabled=yes
 
 
-<br>
+
+#### 1.6.4 - Routes establishment
 
 Restart service on PC and server.
 
