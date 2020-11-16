@@ -1,9 +1,9 @@
-# Cockpit
+# ENDER OCEAN Cockpit
 
 
-## 1. About ENDER OCEAN cockpit 
+## 1. About the cockpit 
 
-Ender cockpit is a software solution that enables gamers to control a ROV remotely. They connect to an online Website from home with a simple browser, define their preferences and start operating the remote robot located underwater miles away.  Solution works with BlueRov2 robots with quite a low latency using 4G connection.
+ENDER OCEAN cockpit is a software solution that enables gamers to control a ROV remotely. They connect to an online Website from home with a simple browser, define their preferences and start operating the remote robot located underwater miles away.  Solution works with BlueRov2 robots with quite a low latency using 4G connection.
 
 In order to set up the system, you need:
 - A domain name (for instance "enderocean.com")
@@ -13,36 +13,36 @@ In order to set up the system, you need:
 - A BlueRov2 connected to your companion Pc
 - A gamepad (optional) : XBox One, XBox360, PS4, PS3, etc.
 
+
 ## 2. How it works ?
 
-Network :
+**Network** :  
 Cloud server is connected to the companion PC using freelan. Companion PC is connected to the robot on the local private network as usual.
 
-By default :
-Cloud server : 9.0.0.11
-Companion PC : 9.0.0.12
+By default :  
+* Cloud server : 9.0.0.11  
+* Companion PC : 9.0.0.12
 
 
-Commands :
-Gamers can control the ROV through their Web Browser with a gamepad or a keyboard controller. All commands are standardized and sent to a Nodered interface on the PC companion. 
-Nodered program communicates with the robot using Mavlink2Rest : https://github.com/patrickelectric/mavlink2rest
-Mavlink2Rest program runs locally on companion Pc
+**Commands** :  
+Gamers can control the ROV through their Web Browser with a gamepad or a keyboard controller.  
+All commands are standardized and sent to a Node-RED interface on the PC companion.   
+Node-RED program communicates with the robot using [Mavlink2Rest](https://github.com/patrickelectric/mavlink2rest
+Mavlink2Rest program runs locally on companion Pc)
 
 
-Video :
-Video flow is broadcasted by the robot to the companion PC, which render it in a local window using GStreamer.
+**Video** :  
+Video flow is broadcasted by the robot to the companion PC, which render it in a local window using GStreamer.  
 This window is then shared on the online server using WebRTC protocols.
 
-## 4. Pre-requisites
 
-## 5. Server Installation
+## 3. Key Links:
 
-## 6. PC Setup
+* [Pre-requisites](https://github.com/enderocean/cockpit/documentation/prerequisites.md)
+* [Server Installation](https://github.com/enderocean/cockpit/documentation/server_install.md)
+* [PC Setup](https://github.com/enderocean/cockpit/documentation/pc_setup.md)
+* [Know issues](https://github.com/enderocean/cockpit/documentation/known_issues.md)
+* [Contributions](https://github.com/enderocean/cockpit/contributions.md)
+* [Licence](https://github.com/enderocean/cockpit/documentation/LICENSE.md)
 
-## 7. Know issues
-
-## 8. Contributions
-
-## 9. Licences
-
-Published under GPLv3
+All the code is open-source, so you can contribute and evolve it as you want. Contact us for any support.
