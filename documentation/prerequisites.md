@@ -99,6 +99,12 @@ Edit file to expose freelan on port 12000 on local PC : /etc/freelan/key.conf
         passphrase=asecuredpassword
 
 
+Restart service and try to ping server:
+
+        ping 9.0.0.11
+
+<br>
+
 
 #### 1.6.3 - Server configuration
 
@@ -137,3 +143,8 @@ Edit file to expose freelan on port 12000 on Cloud server : /etc/freelan/key.con
         [switch]
         routing_method=switch
         relay_mode_enabled=yes
+
+
+Restart service and try to ping PC:
+
+        ping 9.0.0.12
