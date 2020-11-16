@@ -26,10 +26,6 @@ In order to set up the system, you need:
 **Network** :  
 Cloud server is connected to the companion PC using freelan. Companion PC is connected to the robot on the local private network as usual.
 
-By default :  
-* Cloud server : 9.0.0.11  
-* Companion PC : 9.0.0.12
-
 
 **Commands** :  
 Gamers can control the ROV through their Web Browser with a gamepad or a keyboard controller.  

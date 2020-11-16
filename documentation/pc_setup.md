@@ -2,7 +2,14 @@
 
 ## 1. PC Setup
 
-### 1.1 - Node-RED
+### 1.1 - Mavlink2REST
+
+Start Mavlink2REST on PC. It listens on port 8088.
+
+	mavlink2rest
+
+
+### 1.2 - Node-RED
 
 Node-RED is up and listening on port 1880. 
 
@@ -18,11 +25,11 @@ You can [Import flow](https://) in your local instance.
 
 <br>
 
-### 1.2 - Screen sharing
+### 1.3 - Screen sharing
 
 Remote control is based on a PC screen sharing operation. 
 
-#### 1.2.1 - Camera
+#### 1.3.1 - Camera
 
 To share your screen, you need to configure the BlueROV2 camera at : 192.168.2.2:2770/camera
 
@@ -34,7 +41,7 @@ To share your screen, you need to configure the BlueROV2 camera at : 192.168.2.2
 <br>
 
 
-#### 1.2.2 - GStreamer
+#### 1.3.2 - GStreamer
 
 Launch GStreamer command to display camera flow in a simple window:
 
@@ -43,7 +50,7 @@ Launch GStreamer command to display camera flow in a simple window:
 <br>
 
 
-#### 1.2.3 - WebRTC Brodcast
+#### 1.3.3 - WebRTC Brodcast
 
 And then browse the broadcast WebRTC URL to share this window: http://drone1.mydomain.com/default/broadcast
 

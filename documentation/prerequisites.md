@@ -33,7 +33,18 @@ Install PM2 on Cloud server to execute Ender Cockpit permanently
 
 <br>
 
-### 1.4 - Node-RED
+
+### 1.4 - Mavlink2REST
+
+Install Mavlink2REST on local companion PC
+
+        cargo install mavlink2rest
+
+
+
+<br>
+
+### 1.5 - Node-RED
 
 Install Node-RED on local companion PC
 
@@ -46,7 +57,7 @@ If your OS supports Snap you can install Node-RED with:
 
 <br>
 
-### 1.5 - GStreamer
+### 1.6 - GStreamer
 
 Install GStreamer on local companion PC
 
@@ -54,17 +65,22 @@ Install GStreamer on local companion PC
 
 <br>
 
-### 1.6 - Freelan
+### 1.7 - Freelan
 
-#### 1.6.1 - Service
+#### 1.7.1 - Service
 
 Install Freelan on your companion PC and your Cloud server.
 
         sudo apt install freelan
         sudo service freelan start
 
+By default, IPs are :  
+* Cloud server : 9.0.0.11  
+* Companion PC : 9.0.0.12
 
-#### 1.6.2 - PC configuration
+<br>
+
+#### 1.7.2 - PC configuration
 
 Check file is as followed : /etc/default/freelan
 
@@ -103,7 +119,7 @@ Edit file to expose freelan on port 12000 on local PC : /etc/freelan/key.conf
 <br>
 
 
-#### 1.6.3 - Server configuration
+#### 1.7.3 - Server configuration
 
 
 Check file is as followed : /etc/default/freelan
@@ -143,7 +159,7 @@ Edit file to expose freelan on port 12000 on Cloud server : /etc/freelan/key.con
 
 
 
-#### 1.6.4 - Routes establishment
+#### 1.7.4 - Routes establishment
 
 Restart service on PC and server.
 
