@@ -27,8 +27,7 @@ By default :
 **Commands** :  
 Gamers can control the ROV through their Web Browser with a gamepad or a keyboard controller.  
 All commands are standardized and sent to a Node-RED interface on the PC companion.   
-Node-RED program communicates with the robot using [Mavlink2Rest](https://github.com/patrickelectric/mavlink2rest
-Mavlink2Rest program runs locally on companion Pc)
+Node-RED program communicates with the robot using [Mavlink2Rest](https://github.com/patrickelectric/mavlink2rest)
 
 
 **Video** :  
