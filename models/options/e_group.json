@@ -1,0 +1,12 @@
+[
+    {
+        "target": "e_user",
+        "relation": "belongsToMany",
+        "foreignKey": "fk_id_e_group",
+        "as": "r_user",
+        "showAs": "User",
+        "through": "2_group",
+        "otherKey": "fk_id_e_user",
+        "structureType": "hasMany"
+    }
+]

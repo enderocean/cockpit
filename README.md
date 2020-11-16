@@ -15,7 +15,7 @@ In order to set up the system, you need:
 - A domain name (for instance "enderocean.com")
 - A server under Linux (Ubuntu Server) hosted in the cloud with a SSH access
 - A wildcard SSL certificate (you can generate it with Let's encrypt for instance or create a simple renewable instance for each domain you will secure)
-- A PC companion (laptop under Linux - Ubuntu 19.10)
+- A companion PC (laptop under Linux - Ubuntu 19.10)
 - A BlueRov2 connected to your companion Pc
 - A gamepad (optional) : XBox One, XBox360, PS4, PS3, etc.
 

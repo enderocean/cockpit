@@ -1,0 +1,37 @@
+{
+    "id": {
+        "type": "INTEGER",
+        "autoIncrement": true,
+        "primaryKey": true
+    },
+    "version": {
+        "type": "INTEGER",
+        "defaultValue": 1
+    },
+    "createdBy": {
+        "type": "STRING",
+        "defaultValue": null,
+        "validate": false
+    },
+    "updatedBy": {
+        "type": "STRING",
+        "defaultValue": null,
+        "validate": false
+    },
+    "f_order": {
+        "type": "INTEGER",
+        "newmipsType": "number",
+        "defaultValue": null,
+        "validate": true
+    },
+    "f_execution": {
+        "type": "ENUM",
+        "values": [
+            "immediate",
+            "differee"
+        ],
+        "newmipsType": "enum",
+        "defaultValue": "Immédiate",
+        "validate": true
+    }
+}

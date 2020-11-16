@@ -1,0 +1,14 @@
+.blocker {
+  z-index: 9999;
+}
+.modal {
+  box-shadow: 0 0 10px #585858;
+  max-width: 100%;
+  overflow: hidden;
+  overflow-y: auto;
+}
+.modal a.close-modal {
+  position: absolute;
+  top: 12.5px;
+  right: 12.5px;
+}

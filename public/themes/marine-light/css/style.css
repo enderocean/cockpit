@@ -1,0 +1,56 @@
+@import url("../../light.css");
+
+/*
+ * Skin: Marine Light
+ * ---------
+ */
+.main-header .navbar {
+  background-color: #181870;
+}
+.main-header .navbar .sidebar-toggle:hover {
+  background-color: #2e2e86;
+}
+@media (max-width: 767px) {
+  .main-header .navbar .dropdown-menu li a:hover {
+    background: #2e2e86;
+  }
+}
+.main-header .logo {
+  background-color: #181870;
+}
+.main-header .logo:hover {
+  background-color: #2e2e86;
+}
+.main-header li.user-header {
+  background-color: #181870;
+}
+.sidebar-menu > li:hover > a,
+.sidebar-menu > li.active > a {
+  border-left-color: #181870;
+}
+.form-title{
+    background-color: #f9fafc;
+    border: 1px solid #181870;
+    border-radius: 3px;
+}
+.form-title h3{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+/* Login Page Style */
+html#html-login, html#html-login body{
+  background-color: #222d32 !important;
+}
+
+html#html-login .form-box .header {
+  background: #181870;
+}
+
+html#html-login .btn.btn-primary:hover, html#html-login .btn.btn-primary:active, html#html-login .btn.btn-primary.hover {
+  background-color: #181870;
+}
+
+html#html-login .btn.btn-primary {
+  background-color: #2e2e86;
+  border-color: #181870;
+}

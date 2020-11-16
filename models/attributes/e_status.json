@@ -1,0 +1,69 @@
+{
+    "id": {
+        "type": "INTEGER",
+        "autoIncrement": true,
+        "primaryKey": true
+    },
+    "version": {
+        "type": "INTEGER",
+        "defaultValue": 1
+    },
+    "createdBy": {
+        "type": "STRING",
+        "defaultValue": null,
+        "validate": false
+    },
+    "updatedBy": {
+        "type": "STRING",
+        "defaultValue": null,
+        "validate": false
+    },
+    "f_entity": {
+        "type": "STRING",
+        "newmipsType": "string",
+        "defaultValue": null,
+        "validate": true
+    },
+    "f_field": {
+        "type": "STRING",
+        "newmipsType": "string",
+        "defaultValue": null,
+        "validate": true
+    },
+    "f_name": {
+        "type": "STRING",
+        "newmipsType": "string",
+        "defaultValue": null,
+        "validate": true
+    },
+    "f_color": {
+        "type": "STRING",
+        "newmipsType": "color",
+        "defaultValue": null,
+        "validate": true
+    },
+    "f_button_label": {
+        "type": "STRING",
+        "newmipsType": "string",
+        "defaultValue": null,
+        "validate": true
+    },
+    "f_position": {
+        "type": "INTEGER",
+        "newmipsType": "number",
+        "defaultValue": null,
+        "validate": true
+    },
+    "f_default": {
+        "type": "BOOLEAN",
+        "newmipsType": "boolean",
+        "defaultValue": null,
+        "validate": true
+    },
+    "f_comment": {
+        "type": "BOOLEAN",
+        "newmipsType": "boolean",
+        "defaultValue": null,
+        "validate": true
+    }
+}

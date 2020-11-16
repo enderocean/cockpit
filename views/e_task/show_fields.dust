@@ -1,0 +1,255 @@
+<div class="nav-tabs-custom" id="tabs">
+    {^hideTab}
+    <ul class="nav nav-tabs">
+        <li class="active">
+            <a data-toggle="tab" href="#home">
+                {#__ key="entity.e_task.label_entity" /}</a>
+        </li>
+        {#entityAccess entity="history_task_state"}
+        <li>
+            <a id="r_history_state-click" data-toggle="tab" data-tabtype="hasMany" href="#r_history_state">
+                {#__ key="entity.e_task.r_history_state" /}
+            </a>
+        </li>
+        {/entityAccess}
+        {#entityAccess entity="documents_task"}
+        <li>
+            <a id="r_documents_task-click" data-toggle="tab" data-tabtype="hasMany" href="#r_documents_task">
+                {#__ key="entity.e_task.r_documents_task" /}
+            </a>
+        </li>
+        {/entityAccess}
+    </ul>
+    {/hideTab}
+    <div class="tab-content" style="min-height:275px;">
+        <div id="home" class="tab-pane fade in active">
+            <div id="fields" class="row">
+
+                <div data-field="f_state" class="fieldLineHeight col-xs-12">
+                    <div class="form-group">
+                        <label for="r_state">
+                            {#__ key="entity.e_task.r_state" /}&nbsp;
+                            {@inline_help field="r_state"}
+                            <i data-field="r_state" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                            {/inline_help}
+                        </label>
+                        <br>
+                        <span class="badge" style="background: {r_state.f_color};">{r_state.f_name}</span>
+                    </div>
+                    <div class="form-group">
+                        {#r_state.r_children taskid=id}
+                        {#checkStatusPermission status=.}
+                        <a data-href="/task/set_status/{taskid}/{f_field}/{id}" data-comment="{f_comment}" class="status btn btn-info" style="margin-right: 5px;">
+                            {^f_button_label}{f_name}
+                            {:else}{f_button_label}
+                            {/f_button_label}
+                        </a>
+                        {/checkStatusPermission}
+                        {/r_state.r_children}
+                    </div>
+                </div>
+                <div data-field="f_title" class="fieldLineHeight col-xs-12">
+                    <div class="form-group">
+                        <label for="f_title">
+                            {#__ key="entity.e_task.f_title"/}&nbsp;
+                            {@inline_help field="f_title"}
+                            <i data-field="f_title" class="inline-help fa fa-info-circle" style="color: #1085EE;"></i>
+                            {/inline_help}
+                        </label>
+                        <input class="form-control input" placeholder='{#__ key="entity.e_task.f_title" /}' name="f_title" value="{f_title}" type="text" maxlength="255" readonly="">
+                    </div>
+                </div>
+                <div data-field="f_type" class="fieldLineHeight col-xs-12">
+                    <div class="form-group">
+                        <label for="f_type">
+                            {#__ key="entity.e_task.f_type"/}&nbsp;
+                            {@inline_help field="f_type"}
+                            <i data-field="f_type" class="inline-help fa fa-info-circle" style="color: #1085EE;"></i>
+                            {/inline_help}
+                        </label>
+                        {^f_type}
+                        <input class="form-control input" placeholder='{#__ key="entity.e_task.f_type" /}' name="f_type" type="text" readonly="">
+                        {/f_type}
+                        {#enum_radio.e_task.f_type}
+                        {@eq key=f_type value="{.value}" }
+                        <input class="form-control input" placeholder='{#__ key="entity.e_task.f_type" /}' name="f_type" value="{.translation}" type="text" readonly="">
+                        {/eq}
+                        {/enum_radio.e_task.f_type}
+                    </div>
+                </div>
+                <div data-field="f_planned_date" class="fieldLineHeight col-xs-12">
+                    <div class="form-group">
+                        <label for="f_planned_date">
+                            {#__ key="entity.e_task.f_planned_date"/}&nbsp;
+                            {@inline_help field="f_planned_date"}
+                            <i data-field="f_planned_date" class="inline-help fa fa-info-circle" style="color: #1085EE;"></i>
+                            {/inline_help}
+                        </label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <i class="fa fa-calendar"></i>
+                            </div>
+                            <input class="form-control input" placeholder='{#__ key="entity.e_task.f_planned_date" /}' name="f_planned_date" value="{f_planned_date|date}" type="text" readonly="">
+                        </div>
+                    </div>
+                </div>
+                <div data-field="f_execution_start_date" class="fieldLineHeight col-xs-12">
+                    <div class="form-group">
+                        <label for="f_execution_start_date">
+                            {#__ key="entity.e_task.f_execution_start_date"/}&nbsp;
+                            {@inline_help field="f_execution_start_date"}
+                            <i data-field="f_execution_start_date" class="inline-help fa fa-info-circle" style="color: #1085EE;"></i>
+                            {/inline_help}
+                        </label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <i class="fa fa-calendar"></i>
+                            </div>
+                            <input class="form-control input" placeholder='{#__ key="entity.e_task.f_execution_start_date" /}' name="f_execution_start_date" value="{f_execution_start_date|date}" type="text" readonly="">
+                        </div>
+                    </div>
+                </div>
+                <div data-field="f_execution_finish_date" class="fieldLineHeight col-xs-12">
+                    <div class="form-group">
+                        <label for="f_execution_finish_date">
+                            {#__ key="entity.e_task.f_execution_finish_date"/}&nbsp;
+                            {@inline_help field="f_execution_finish_date"}
+                            <i data-field="f_execution_finish_date" class="inline-help fa fa-info-circle" style="color: #1085EE;"></i>
+                            {/inline_help}
+                        </label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <i class="fa fa-calendar"></i>
+                            </div>
+                            <input class="form-control input" placeholder='{#__ key="entity.e_task.f_execution_finish_date" /}' name="f_execution_finish_date" value="{f_execution_finish_date|date}" type="text" readonly="">
+                        </div>
+                    </div>
+                </div>
+                <div data-field="f_duration" class="fieldLineHeight col-xs-12">
+                    <div class="form-group">
+                        <label for="f_duration">
+                            {#__ key="entity.e_task.f_duration"/}&nbsp;
+                            {@inline_help field="f_duration"}
+                            <i data-field="f_duration" class="inline-help fa fa-info-circle" style="color: #1085EE;"></i>
+                            {/inline_help}
+                        </label>
+                        <input class="form-control input" data-custom-type="decimal" placeholder='{#__ key="entity.e_task.f_duration" /}' name="f_duration" value="{f_duration}" type="text" readonly="">
+                    </div>
+                </div>
+                <div data-field="f_data_flow" class="fieldLineHeight col-xs-12">
+                    <div class="form-group">
+                        <label for="f_data_flow">
+                            {#__ key="entity.e_task.f_data_flow"/}&nbsp;
+                            {@inline_help field="f_data_flow"}
+                            <i data-field="f_data_flow" class="inline-help fa fa-info-circle" style="color: #1085EE;"></i>
+                            {/inline_help}
+                        </label>
+                        <textarea readonly="readonly" class="show-textarea regular-textarea">{f_data_flow|s}</textarea>
+                    </div>
+                </div>
+
+                <div data-field="f_robot" class="fieldLineHeight col-xs-12">
+                    <div class="form-group">
+                        <label for="r_robot">
+                            {#__ key="entity.e_task.r_robot" /}&nbsp;
+                            {@inline_help field="r_robot"}
+                            <i data-field="r_robot" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                            {/inline_help}
+                        </label>
+                        <input class="form-control input" name="r_robot" value="{r_robot.f_name|string}" placeholder='{#__ key="entity.e_task.r_robot" /}' type="text" readonly="">
+                    </div>
+                </div>
+                <div data-field="f_program_file" class="fieldLineHeight col-xs-12">
+                    <div class="form-group">
+                        <label for="f_program_file">
+                            {#__ key="entity.e_task.f_program_file"/}&nbsp;
+                            {@inline_help field="f_program_file"}
+                            <i data-field="f_program_file" class="inline-help fa fa-info-circle" style="color: #1085EE;"></i>
+                            {/inline_help}
+                        </label>
+                        <div class="input-group">
+                            {?f_program_file}
+                            <div class="input-group-addon">
+                                <i class="fa fa-download"></i>
+                            </div>
+                            <input data-entity="e_task" data-filename="{f_program_file}" class="form-control text-left preview_file" name="f_program_file" value="{f_program_file|filename}">
+                            {:else}
+                            {#__ key="message.empty_file" /}
+                            {/f_program_file}
+                        </div>
+                    </div>
+                </div>
+                <div data-field="f_procedure" class="fieldLineHeight col-xs-12">
+                    <div class="form-group">
+                        <label for="f_procedure">
+                            {#__ key="entity.e_task.f_procedure"/}&nbsp;
+                            {@inline_help field="f_procedure"}
+                            <i data-field="f_procedure" class="inline-help fa fa-info-circle" style="color: #1085EE;"></i>
+                            {/inline_help}
+                        </label>
+                        <textarea readonly="readonly" class="show-textarea regular-textarea">{f_procedure|s}</textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="actions">
+                <form action="/task/delete" method="post">
+                    <div class="quicklinks">
+                        <a class="btn btn-default" href="javascript:history.back();">
+                            <i class="fa fa-arrow-left"></i>&nbsp;&nbsp;
+                            {#__ key="button.return"/}
+                        </a>
+                        {#actionAccess entity="task" action="delete"}
+                        <button class="btn btn-danger btn-confirm">
+                            <i class="fa fa-trash-o fa-md">&nbsp;&nbsp;</i>
+                            <span>
+                                {#__ key="button.delete"/}
+                            </span>
+                        </button>
+                        <input name="id" type="hidden" value="{e_task.id}" class="form-control">
+                        {/actionAccess}
+                        {#actionAccess entity="task" action="update"}
+                        <a href="/task/update_form?id={e_task.id}" class="btn btn-warning">
+                            <i class="fa fa-pencil fa-md">&nbsp;&nbsp;</i>
+                            <span>
+                                {#__ key="button.update"/}
+                            </span>
+                        </a>
+                        {/actionAccess}
+                        {^hideButton}
+                        {#actionAccess entity="task" action="create"}
+                        <a href="/task/create_form" class="btn btn-success">
+                            <i class="fa fa-plus fa-md">&nbsp;&nbsp;</i>
+                            <span>
+                                {#__ key="button.create"/}
+                            </span>
+                        </a>
+                        {/actionAccess}
+                        {#actionAccess entity="task" action="read"}
+                        <a href="/task/list" type="submit" class="btn btn-primary">
+                            <i class="fa fa-list fa-md">&nbsp;&nbsp;</i>
+                            <span>
+                                {#__ key="button.list"/}
+                            </span>
+                        </a>
+                        {/actionAccess}
+                        {/hideButton}
+                    </div>
+                </form>
+            </div>
+        </div>
+        {^hideTab}
+        {#entityAccess entity="history_task_state"}
+        <div id="r_history_state" class="ajax-tab tab-pane fade" data-tabtype="hasMany" data-asso-alias="r_history_state" data-asso-foreignkey="fk_id_task_history_state" data-asso-flag="{id}" data-asso-source="e_task" data-asso-url="task">
+            <div class="ajax-content sub-tab-table"></div>
+        </div>
+        {/entityAccess}
+        {/hideTab}
+        {^hideTab}
+        {#entityAccess entity="documents_task"}
+        <div id="r_documents_task" class="ajax-tab tab-pane fade" data-tabtype="hasMany" data-asso-alias="r_documents_task" data-asso-foreignkey="fk_id_task" data-asso-flag="{id}" data-asso-source="e_task" data-asso-url="task">
+            <div class="ajax-content sub-tab-table"></div>
+        </div>
+        {/entityAccess}
+        {/hideTab}
+    </div>
+</div>

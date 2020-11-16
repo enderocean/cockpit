@@ -1,0 +1,26 @@
+{
+    "id": {
+        "type": "INTEGER",
+        "autoIncrement": true,
+        "primaryKey": true
+    },
+    "version": {
+        "type": "INTEGER",
+        "defaultValue": 1
+    },
+    "createdBy": {
+        "type": "STRING",
+        "defaultValue": null,
+        "validate": false
+    },
+    "updatedBy": {
+        "type": "STRING",
+        "defaultValue": null,
+        "validate": false
+    },
+    "f_comment": {
+        "type": "TEXT",
+        "newmipsType": "text",
+        "validate": true
+    }
+}

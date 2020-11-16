@@ -1,0 +1,289 @@
+/*!
+*   Newmips CSS V0.1
+*   Author: Newmips
+!*/
+/*
+Core: General style
+----------------------------
+*/
+
+.status-to-self:before {
+    font-family: "Font Awesome";
+    content: "\f021";
+    font: normal normal normal 14px/1 FontAwesome;
+    float: left;
+}
+
+input[type=file]: {
+    height: auto;
+}
+
+/* DataTables buttons*/
+.dt-buttons: {
+    margin-left: 20px;
+}
+select.form-control{
+    width: 100%;
+}
+select.form-control.ajax{
+    width: 100% !important;
+}
+.form-group .select2-container {
+    width: 100% !important;
+}
+.select2-dropdown .select2-search__field:focus, .select2-search--inline .select2-search__field:focus {
+    border: 1px solid lightgrey;
+    border-radius: 3px;
+}
+.hover:hover,
+.inline-help:hover,
+input[type=color]:hover,
+.insert:hover,
+table > tbody > tr:hover {
+    cursor: pointer;
+}
+
+.icon-wrap {
+    margin-bottom: 20px;
+}
+label.no-weight {
+    font-weight: normal !important;
+    cursor: pointer;
+}
+/** Component Address**/
+.section_address_fields{
+    border:1px solid #dddddd;
+    /*margin: 5px;*/
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+}
+.div_address_search_input{
+    margin-top: -16px;
+}
+.address_maps{
+    margin-top: 25px  !important;
+    height: 405px;
+    background-color: #efefef;
+}
+/* required field */
+label.required:after {
+    color: #e32;
+    content: ' *';
+    display:inline;
+}
+.text-left{
+    text-align: left;
+}
+.connectedSortable {
+    padding-bottom: 10px;
+}
+.quicklinks a, .quicklinks button {
+    margin-right: 6px;
+}
+.dataTable thead{
+    background-color: #FFF;
+}
+div.dataTables_filter input {
+    margin-left: 7px;
+    border-radius: 5px;
+}
+div.dataTables_length select {
+    border-radius: 5px;
+}
+.dt-button {
+    margin-right: 7px !important;
+    border: 1px solid #cbcbcb !important;
+    background-image: none !important;
+}
+.dt-buttons {
+    margin-left: 20px !important;
+}
+.content-header{
+    background: #F9FAFC none repeat scroll 0 0 !important;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+}
+.skin-black .main-header > .logo {
+    color: #333 !important;
+}
+.content-wrapper{
+    background-color: #F4F4F5;
+}
+/* PRINT COMPONENT */
+.print-tab{
+    margin: 20px;
+    padding: 25px;
+    border: 1px solid lightgrey;
+    overflow-y: auto;
+}
+.print-tab .form-group{
+    page-break-inside: avoid;
+}
+.dontbreakitplz{
+    page-break-inside: avoid;
+}
+.print-tab .dt-buttons, .print-tab .dataTables_length, .print-tab .dataTables_filter, .print-tab .dataTables_info, .print-tab .dataTables_paginate{
+    display: none;
+}
+.print-tab table.dataTable thead .sorting, .print-tab table.dataTable thead .sorting_desc, .print-tab table.dataTable thead .sorting_asc {
+    background: transparent;
+}
+.print-tab input{
+    background: transparent !important;
+    border: 0px !important;
+    -moz-appearance:textfield !important;
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    margin: 0 !important;
+}
+.print-tab button, .print-tab a.btn{
+    display: none;
+}
+/* Sub table in show fields, overflow x managment */
+.sub-tab-table .dataTables_wrapper{
+    overflow: auto;
+}
+.sub-tab-table .dataTable{
+    width: 99.9%;
+}
+.show-textarea{
+    border: 1px solid #d2d6de;
+    padding: 5px;
+    width: 100%;
+    min-height: 200px;
+    border-radius: 2px;
+}
+.sub-module-arianne{
+    color: #444 !important;
+}
+/* Standard skin */
+.main-header .navbar .nav > li > a {
+    color: #ffffff;
+}
+.main-header .navbar .nav > li > a:hover,
+.main-header .navbar .nav > li > a:active,
+.main-header .navbar .nav > li > a:focus,
+.main-header .navbar .nav .open > a,
+.main-header .navbar .nav .open > a:hover,
+.main-header .navbar .nav .open > a:focus,
+.main-header .navbar .nav > .active > a {
+    background: rgba(0, 0, 0, 0.1);
+    color: #f6f6f6;
+}
+.main-header .navbar .sidebar-toggle {
+    color: #ffffff;
+}
+.main-header .navbar .sidebar-toggle:hover {
+    color: #f6f6f6;
+    background: rgba(0, 0, 0, 0.1);
+}
+.main-header .navbar .sidebar-toggle {
+    color: #fff;
+}
+@media (max-width: 767px) {
+    .main-header .navbar .dropdown-menu li.divider {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+    .main-header .navbar .dropdown-menu li a {
+        color: #fff;
+    }
+}
+.main-header .logo {
+    color: #ffffff;
+    border-bottom: 0 solid transparent;
+}
+.user-panel > .image > a > img {
+    width: 100%;
+    max-width: 180px;
+    height: auto;
+}
+.content-header {
+    background: transparent;
+}
+.sidebar-form {
+    border-radius: 3px;
+    margin: 10px 10px;
+}
+.sidebar-form input[type="text"],
+.sidebar-form .btn {
+    box-shadow: none;
+    border: 1px solid transparent;
+    height: 35px;
+}
+.sidebar-form input[type="text"] {
+    color: #666;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 2px;
+}
+.sidebar-form input[type="text"]:focus,
+.sidebar-form input[type="text"]:focus + .input-group-btn .btn {
+    background-color: #fff;
+    color: #666;
+}
+.sidebar-form input[type="text"]:focus + .input-group-btn .btn {
+    border-left-color: #fff;
+}
+.sidebar-form .btn {
+    color: #999;
+    border-top-left-radius: 0;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    border-bottom-left-radius: 0;
+}
+.sidebar a:hover {
+    text-decoration: none;
+}
+
+/* Notification tweak */
+.navbar-nav > .messages-menu > .dropdown-menu > div#notification-wrapper > li .menu > li > a{
+    white-space: inherit !important;
+}
+
+.navbar-nav > .messages-menu > .dropdown-menu > div#notification-wrapper > li .menu > li > a > h4{
+    padding-top: 13px !important;
+}
+
+.fieldLineHeight{
+    min-height: 75px;
+}
+
+.input-group-addon{
+    cursor: pointer;
+}
+
+.copy-button {
+    /*padding: 6px 12px;*/
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1;
+    color: #555;
+    text-align: center;
+    background-color: transparent;
+    border: "none";
+    border-radius: 4px;
+    width: 40px;
+    cursor: pointer;
+    display: table-cell;
+}
+
+.copy-button:hover {
+    background-color: #eee;
+}
+
+.icon-wrap{
+    cursor: pointer;
+}
+
+.icon-wrap:hover{
+    background: #3c8dbc;
+}
+
+.nav-tabs-custom {
+    box-shadow: none !important;
+}
+
+.preview_file {
+    cursor: pointer;
+}

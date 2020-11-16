@@ -1,0 +1,62 @@
+<div id="fields" class="row">
+    <div data-field="f_current_status" class="fieldLineHeight col-xs-12">
+        <div class="form-group">
+            <label for="f_current_status">
+                {#__ key="entity.e_robot.f_current_status"/}&nbsp;
+                {@inline_help field="f_current_status"}
+                <i data-field="f_current_status" class="inline-help fa fa-info-circle" style="color: #1085EE;"></i>
+                {/inline_help}
+            </label>
+            <select class="form-control select" name="f_current_status" width="100%">
+                <option value="">
+                    {#__ key="select.default" /}
+                </option>
+                {#enum_radio.e_robot.f_current_status}
+                {@eq key=f_current_status value="{.value}" }
+                <option value="{.value}" selected=""> {.translation} </option>
+                {:else}
+                <option value="{.value}"> {.translation} </option>
+                {/eq}
+                {/enum_radio.e_robot.f_current_status}
+            </select>
+        </div>
+    </div>
+    <div data-field="f_name" class="fieldLineHeight col-xs-12">
+        <div class="form-group">
+            <label for="f_name">
+                {#__ key="entity.e_robot.f_name"/}&nbsp;
+                {@inline_help field="f_name"}
+                <i data-field="f_name" class="inline-help fa fa-info-circle" style="color: #1085EE;"></i>
+                {/inline_help}
+            </label>
+            <input class="form-control input" placeholder='{#__ key="entity.e_robot.f_name" /}' name="f_name" value="{f_name}" type="text" maxlength="255">
+        </div>
+    </div>
+
+    <div data-field="f_api_credentials" class="fieldLineHeight col-xs-12">
+        <div class="form-group">
+            <label for="r_api_credentials">
+                {#__ key="entity.e_robot.r_api_credentials" /}&nbsp;
+                {@inline_help field="r_api_credentials"}
+                <i data-field="r_api_credentials" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+            <select class="ajax form-control" name="r_api_credentials" data-source="api_credentials" data-using="f_client_name" width="100%">
+                {#r_api_credentials}
+                <option value="{id}" selected="">{f_client_name|string}</option>
+                {/r_api_credentials}
+            </select>
+        </div>
+    </div>
+    <div data-field="f_comment" class="fieldLineHeight col-xs-12">
+        <div class="form-group">
+            <label for="f_comment">
+                {#__ key="entity.e_robot.f_comment"/}&nbsp;
+                {@inline_help field="f_comment"}
+                <i data-field="f_comment" class="inline-help fa fa-info-circle" style="color: #1085EE;"></i>
+                {/inline_help}
+            </label>
+            <textarea class="form-control textarea regular-textarea" placeholder='{#__ key="entity.e_robot.f_comment" /}' name="f_comment" id="f_comment_textareaid" type="text">{f_comment|s}</textarea>
+        </div>
+    </div>
+</div>

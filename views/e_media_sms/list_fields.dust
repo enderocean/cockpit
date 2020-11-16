@@ -1,0 +1,50 @@
+<table id="table_e_media_sms" data-url="/media_sms/datalist" class="dataTable table table-bordered table-striped animated fadeIn" style="display: none;">
+    <thead class="main">
+        <tr class="fields">
+            <th data-field="id" data-col="id">
+                {#__ key="entity.e_media_sms.id_entity"/}&nbsp;
+                {#__ key="entity.e_media_sms.label_entity"/}
+            </th>
+            <th data-field="f_message" data-col="f_message" data-type="text">
+                {#__ key="entity.e_media_sms.f_message"/}
+            </th>
+            <th data-field="f_phone_numbers" data-col="f_phone_numbers" data-type="string">
+                {#__ key="entity.e_media_sms.f_phone_numbers"/}
+            </th>
+            {#actionAccess entity="media_sms" action="read"}
+            <th></th>
+            {/actionAccess}
+            {#actionAccess entity="media_sms" action="update"}
+            <th></th>
+            {/actionAccess}
+            {#actionAccess entity="media_sms" action="delete"}
+            <th></th>
+            {/actionAccess}
+        </tr>
+    </thead>
+    <thead class="filters">
+        <tr class="fields">
+            <th data-field="id" data-col="id">
+                {#__ key="entity.e_media_sms.id_entity"/}&nbsp;
+                {#__ key="entity.e_media_sms.label_entity"/}
+            </th>
+            <th data-field="f_message" data-col="f_message" data-type="text">
+                {#__ key="entity.e_media_sms.f_message"/}
+            </th>
+            <th data-field="f_phone_numbers" data-col="f_phone_numbers" data-type="string">
+                {#__ key="entity.e_media_sms.f_phone_numbers"/}
+            </th>
+            {#actionAccess entity="media_sms" action="read"}
+            <th></th>
+            {/actionAccess}
+            {#actionAccess entity="media_sms" action="update"}
+            <th></th>
+            {/actionAccess}
+            {#actionAccess entity="media_sms" action="delete"}
+            <th></th>
+            {/actionAccess}
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>

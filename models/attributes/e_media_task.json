@@ -1,0 +1,54 @@
+{
+    "id": {
+        "type": "INTEGER",
+        "autoIncrement": true,
+        "primaryKey": true
+    },
+    "version": {
+        "type": "INTEGER",
+        "defaultValue": 1
+    },
+    "createdBy": {
+        "type": "STRING",
+        "defaultValue": null,
+        "validate": false
+    },
+    "updatedBy": {
+        "type": "STRING",
+        "defaultValue": null,
+        "validate": false
+    },
+    "f_task_name": {
+        "type": "STRING",
+        "newmipsType": "string",
+        "defaultValue": null,
+        "validate": true
+    },
+    "f_task_type": {
+        "type": "ENUM",
+        "values": [
+            "manual",
+            "automatic"
+        ],
+        "newmipsType": "enum",
+        "defaultValue": "Manual",
+        "validate": true
+    },
+    "f_assignment_logic": {
+        "type": "STRING",
+        "newmipsType": "string",
+        "defaultValue": null,
+        "validate": true
+    },
+    "f_program_file": {
+        "type": "STRING",
+        "newmipsType": "file",
+        "defaultValue": null,
+        "validate": true
+    },
+    "f_data_flow": {
+        "type": "TEXT",
+        "newmipsType": "text",
+        "validate": true
+    }
+}

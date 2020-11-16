@@ -1,0 +1,60 @@
+<table id="table_e_history_task_state" data-url="/history_task_state/datalist" class="dataTable table table-bordered table-striped animated fadeIn" style="display: none;">
+    <thead class="main">
+        <tr class="fields">
+
+            <th data-field="createdAt" data-col="createdAt" data-type="datetime">
+                {#__ key="defaults.createdAt"/}
+            </th>
+            <th data-field="r_state" data-col="r_state.f_name" data-type="status">
+                {#__ key="entity.e_history_task_state.r_state"/}&nbsp;-&nbsp;
+                {#__ key="entity.e_status.f_name"/}
+            </th>
+            <th data-field="f_comment" data-col="f_comment" data-type="text">
+                {#__ key="entity.e_history_task_state.f_comment"/}
+            </th>
+            <th data-field="r_modified_by" data-col="r_modified_by.f_login" data-type="string">
+                {#__ key="entity.e_history_task_state.r_modified_by"/}&nbsp;-&nbsp;
+                {#__ key="entity.e_user.f_login"/}
+            </th>
+            {#actionAccess entity="history_task_state" action="read"}
+
+            {/actionAccess}
+            {#actionAccess entity="history_task_state" action="update"}
+            <th></th>
+            {/actionAccess}
+            {#actionAccess entity="history_task_state" action="delete"}
+            <th></th>
+            {/actionAccess}
+        </tr>
+    </thead>
+    <thead class="filters">
+        <tr class="fields">
+
+            <th data-field="createdAt" data-col="createdAt" data-type="datetime">
+                {#__ key="defaults.createdAt"/}
+            </th>
+            <th data-field="r_state" data-col="r_state.f_name" data-type="status">
+                {#__ key="entity.e_history_task_state.r_state"/}&nbsp;-&nbsp;
+                {#__ key="entity.e_status.f_name"/}
+            </th>
+            <th data-field="f_comment" data-col="f_comment" data-type="text">
+                {#__ key="entity.e_history_task_state.f_comment"/}
+            </th>
+            <th data-field="r_modified_by" data-col="r_modified_by.f_login" data-type="string">
+                {#__ key="entity.e_history_task_state.r_modified_by"/}&nbsp;-&nbsp;
+                {#__ key="entity.e_user.f_login"/}
+            </th>
+            {#actionAccess entity="history_task_state" action="read"}
+
+            {/actionAccess}
+            {#actionAccess entity="history_task_state" action="update"}
+            <th></th>
+            {/actionAccess}
+            {#actionAccess entity="history_task_state" action="delete"}
+            <th></th>
+            {/actionAccess}
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>

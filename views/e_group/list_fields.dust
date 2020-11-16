@@ -1,0 +1,44 @@
+<table id="table_e_group" data-url="/group/datalist" class="dataTable table table-bordered table-striped animated fadeIn" style="display: none;">
+    <thead class="main">
+        <tr class="fields">
+            <th data-field="id" data-col="id">
+                {#__ key="entity.e_group.id_entity"/}&nbsp;
+                {#__ key="entity.e_group.label_entity"/}
+            </th>
+            <th data-field="f_label" data-col="f_label" data-type="string">
+                {#__ key="entity.e_group.f_label"/}
+            </th>
+            {#actionAccess entity="group" action="read"}
+            <th></th>
+            {/actionAccess}
+            {#actionAccess entity="group" action="update"}
+            <th></th>
+            {/actionAccess}
+            {#actionAccess entity="group" action="delete"}
+            <th></th>
+            {/actionAccess}
+        </tr>
+    </thead>
+    <thead class="filters">
+        <tr class="fields">
+            <th data-field="id" data-col="id">
+                {#__ key="entity.e_group.id_entity"/}&nbsp;
+                {#__ key="entity.e_group.label_entity"/}
+            </th>
+            <th data-field="f_label" data-col="f_label" data-type="string">
+                {#__ key="entity.e_group.f_label"/}
+            </th>
+            {#actionAccess entity="group" action="read"}
+            <th></th>
+            {/actionAccess}
+            {#actionAccess entity="group" action="update"}
+            <th></th>
+            {/actionAccess}
+            {#actionAccess entity="group" action="delete"}
+            <th></th>
+            {/actionAccess}
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>

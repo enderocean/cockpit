@@ -1,0 +1,38 @@
+{
+    "id": {
+        "type": "INTEGER",
+        "autoIncrement": true,
+        "primaryKey": true
+    },
+    "version": {
+        "type": "INTEGER",
+        "defaultValue": 1
+    },
+    "createdBy": {
+        "type": "STRING",
+        "defaultValue": null,
+        "validate": false
+    },
+    "updatedBy": {
+        "type": "STRING",
+        "defaultValue": null,
+        "validate": false
+    },
+    "f_entity": {
+        "type": "STRING",
+        "newmipsType": "string",
+        "defaultValue": null,
+        "validate": true
+    },
+    "f_field": {
+        "type": "STRING",
+        "newmipsType": "string",
+        "defaultValue": null,
+        "validate": true
+    },
+    "f_content": {
+        "type": "TEXT",
+        "newmipsType": "text",
+        "validate": true
+    }
+}

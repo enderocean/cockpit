@@ -1,0 +1,23 @@
+[
+    {
+        "target": "e_status",
+        "relation": "belongsTo",
+        "foreignKey": "fk_id_status_actions",
+        "as": "r_status_actions",
+        "structureType": "auto_generate"
+    },
+    {
+        "target": "e_media",
+        "relation": "belongsTo",
+        "foreignKey": "fk_id_media_media",
+        "as": "r_media",
+        "showAs": "Media",
+        "structureType": "relatedTo",
+        "usingField": [
+            {
+                "value": "f_name",
+                "type": "string"
+            }
+        ]
+    }
+]

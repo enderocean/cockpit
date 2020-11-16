@@ -1,0 +1,37 @@
+[
+    {
+        "target": "e_media_mail",
+        "relation": "belongsTo",
+        "foreignKey": "fk_id_media_mail",
+        "as": "r_media_mail",
+        "structureType": "hasOne"
+    },
+    {
+        "target": "e_media_notification",
+        "relation": "belongsTo",
+        "foreignKey": "fk_id_media_notification",
+        "as": "r_media_notification",
+        "structureType": "hasOne"
+    },
+    {
+        "target": "e_media_sms",
+        "relation": "belongsTo",
+        "foreignKey": "fk_id_media_sms",
+        "as": "r_media_sms",
+        "structureType": "hasOne"
+    },
+    {
+        "target": "e_media_task",
+        "relation": "belongsTo",
+        "foreignKey": "fk_id_media_task",
+        "as": "r_media_task",
+        "structureType": "hasOne"
+    },
+    {
+        "target": "e_action",
+        "relation": "hasMany",
+        "foreignKey": "fk_id_media_media",
+        "as": "r_action",
+        "structureType": "auto_generate"
+    }
+]

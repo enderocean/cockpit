@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<title>Ender Ocean - {#__ key="app.name"/}</title>
+	<meta charset="UTF-8" />
+	<link href="/css/styles.css" rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css?family=Oswald:400,700|Dancing+Script:400,700|Muli:300,400" rel="stylesheet">
+	{! Bootstrap 4.3.1 !}
+	<link href="/css/Bootstrap/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="/css/Bootstrap/bootstrap-toggle.min.css" rel="stylesheet">
+	{! Font Awesome !}
+	<link href="/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	{! jQuery 2.1.3 !}
+	<script src="/js/jQuery/jquery.min.js" type="text/javascript"></script>
+	{! Popper 1.14.7 !}
+	<script src="/js/plugins/popper/popper.min.js" type="text/javascript"></script>
+	{! Bootstrap 4.3.1 !}
+	<script src="/js/Bootstrap/bootstrap.min.js" type="text/javascript"></script>
+	<script src="/js/Bootstrap/bootstrap-toggle.min.js"></script>
+
+
+	<script src="/js/gc_gamepad_scanner.js"></script>
+	<script src="/js/gc_keyboard_scanner.js"></script>
+	<script src="/js/main.js"></script>
+
+	<!-- jQuery Modal -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+	<link href="/css/modal.css" rel="stylesheet" />
+	<script>
+
+
+		function overlay() {
+
+		  let loader = document.getElementById('loader').style.display;
+		  let display = document.getElementById('overlay').style.display;
+
+		  if (loader == 'none') {
+			if ((display == 'none') || (display == '')) {
+			  document.getElementById('overlay').style.display = 'block';
+			}
+			else document.getElementById('overlay').style.display = 'none';
+		  }
+		  else document.getElementById('overlay').style.display = 'none';
+		}
+		/* When the openFullscreen() function is executed, open the video in fullscreen.
+		Note that we must include prefixes for different browsers, as they don't support the requestFullscreen method yet */
+		function openFullscreen() {
+
+		  let loader = document.getElementById('loader').style.display;
+
+		  if (loader == 'none') {
+
+			/* var elem = document.getElementById("videoTag"); */
+			var elem = document.getElementById("vid");
+
+			if (elem.requestFullscreen) {
+			  elem.requestFullscreen();
+			} else if (elem.mozRequestFullScreen) { /* Firefox */
+			  elem.mozRequestFullScreen();
+			} else if (elem.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+			  elem.webkitRequestFullscreen();
+			} else if (elem.msRequestFullscreen) { /* IE/Edge */
+			  elem.msRequestFullscreen();
+			}
+		  }
+		}
+
+		function openDialogKeyboard() {
+		  $('#modalHTMLKeyboard').modal('show');
+		}
+
+		function openDialogGamepad() {
+		  $('#modalHTMLGamepad').modal('show');
+		}
+
+
+		function displayTarget() {
+		  let loader = document.getElementById('loader').style.display;
+		  let display = document.getElementById('target').style.display;
+
+		  if (loader == 'none') {
+			if ((display == 'none') || (display == '')) {
+			  document.getElementById('target').style.display = 'block';
+			}
+			else document.getElementById('target').style.display = 'none';
+		  }
+		  else document.getElementById('target').style.display = 'none';
+		}
+
+		function horloge(el) {
+		  if(typeof el=="string") { el = document.getElementById(el); }
+		  function actualiser() {
+			var date = new Date();
+			var str = date.getHours();
+			str += ':'+(date.getMinutes()<10?'0':'')+date.getMinutes();
+			str += ':'+(date.getSeconds()<10?'0':'')+date.getSeconds();
+			el.innerHTML = str;
+		  }
+		  actualiser();
+		  setInterval(actualiser,1000);
+		}
+
+		function mavlink_action(action) {
+
+			let url = '';
+			let message = '';
+			switch (action) {
+				case 'arm': 
+					url = '/default/mavlink_arm';
+					message = 'Vehicle armed !';
+					break;
+				case 'disarm': 
+					url = '/default/mavlink_disarm';
+					message = 'Vehicle disarmed !';
+					break;
+				default: 
+					return;
+					break;
+			}
+
+			$.ajax({
+				type: "POST",
+				url: url,
+				dataType: 'json',
+			    data:  {},
+				success: function (data) {
+					console.log(message);
+				},
+				error: function(err) {
+					console.log("Error detected : " + JSON.stringify(err));
+				}
+			});
+			
+		}
+
+		function mavlink_mode(mode) {
+
+			let url = '';
+			let message = mode;
+
+			$.ajax({
+				type: "POST",
+				url: '/default/mavlink_mode',
+			    data:  { "mode": mode },
+				success: function (data) {
+					console.log(message);
+				},
+				error: function(err) {
+					console.log("Error detected");
+				}
+			});
+		}
+
+		var key_event = false;
+		var first_refresh = true;
+
+		$(document).on('change', 'input:radio[id^="customRadio"]', function (event) {
+
+			mavlink_mode(this.value);
+			
+		});
+
+		$(document).on('change', 'input[id="arm"]', function (event) {
+
+			if ((!first_refresh) && (!key_event)) {
+
+				if ($('#arm').prop('checked')) mavlink_action('arm'); 
+				else mavlink_action('disarm');
+			}
+
+			key_event = false;
+
+		});
+
+		function charts() {
+			const url_events = '{url_events}';
+			const events = new EventSource(url_events);
+
+			events.onmessage = (event) => {
+
+				const data = JSON.parse(event.data);
+
+				if (first_refresh) {
+
+					let status_type = data.HEARTBEAT.system_status.type;
+					if (status_type == 'MAV_STATE_ACTIVE') {
+						$('#arm').bootstrapToggle('on');
+					}
+					if (status_type == 'MAV_STATE_STANDBY') {
+						$('#arm').bootstrapToggle('off');
+					}
+
+					first_refresh = false;
+				}
+
+				let radio_mode = "customRadio1";
+				switch (data.HEARTBEAT.custom_mode) {
+					case 0: 
+						radio_mode = "customRadio2";
+						break;
+					case 16: 
+						radio_mode = "customRadio3";
+						break;
+					case 2: 
+						radio_mode = "customRadio4";
+						break;
+				}
+				$('#' + radio_mode).prop('checked', true);
+
+			
+				let battery_level = data.BATTERY_STATUS.battery_remaining;
+				battery.innerHTML = battery_level;
+				if (battery_level > 90) level.className = "fa fa-battery-full";
+				else if (battery_level > 75) level.className = "fa fa-battery-three-quarters";
+				else if (battery_level > 50) level.className = "fa fa-battery-half";
+				else if (battery_level > 25) level.className = "fa fa-battery-quarter";
+				else level.className = "fa fa-battery-empty";
+
+				altitude.innerHTML = data.AHRS3.altitude.toFixed(2);
+
+				let heading = 360 - data.VFR_HUD.heading;
+				compass.style.transform = `rotate(` + heading + `deg)`;
+			}
+
+		}
+
+		/* Initialize photo index */
+		var snap = 0;
+
+		function openDialogDiving() {
+		  if (snap > 0) {
+			$('#modalHTMLDiving').modal('show');
+		  }
+		}
+
+		function snapshot() {
+
+		  let loader = document.getElementById('loader').style.display;
+
+		  if (loader == 'none') {
+
+			snap = snap +1;
+
+			let indicator = '<li id="carousel-indicator-' + (snap-1) + '" data-target="#carousel-diaporama" data-slide-to="' + (snap-1) + '"></li>';
+			$("#carousel-indicators").append(indicator);
+
+			let html = '<div id="carousel-item-' + snap + '" class="carousel-item"><div class="view"><canvas id="canvas_0' + snap + '" ></canvas></div><div class="carousel-caption"><h3 class="h3-responsive">Capture #' + snap + '</h3></div></div>';
+
+			$("#carousel-inner").append(html);
+
+			$('.carousel-item').removeClass('active');
+			$('.carousel-indicators > li').removeClass('active');
+
+			$('.carousel-item').first().addClass('active');
+			$('.carousel-indicators > li').first().addClass('active');
+
+			let logo = document.getElementById("logo-container");
+			let video = document.getElementById("videoTag");
+			
+			/* Display thumbnail */
+			let canvas_mini = document.getElementById("canvas_mini");
+
+			let lw = logo.offsetWidth * 0.18;
+			canvas_mini.width = lw;
+			canvas_mini.height = (video.offsetHeight*lw)/video.offsetWidth;
+
+			let ctx = canvas_mini.getContext("2d");
+			ctx.fillRect(0,0,canvas_mini.width,canvas_mini.height);
+			ctx.drawImage(video,0,0,canvas_mini.width,canvas_mini.height);
+
+			$('#canvas_thumbnail').show();
+
+			setTimeout(function () {
+			  $("#canvas_thumbnail").hide();
+			}, 4000);
+
+
+			/* Modal is 50% of window size and includes padding */
+			let canvas = document.getElementById("canvas_0" + snap);
+			lw = logo.offsetWidth * 0.65;
+			canvas.width = lw;
+			canvas.height = (video.offsetHeight*lw)/video.offsetWidth;
+
+			/* Set canvas in diaporama */
+			ctx = canvas.getContext("2d");
+			ctx.fillRect(0,0,canvas.width,canvas.height);
+			ctx.drawImage(video,0,0,canvas.width,canvas.height);
+
+			$('#carousel-diaporama').carousel();
+
+			{?google_vision}
+				/* send for analyzis */
+				$.ajax({
+					type: "POST",
+					url: '/default/capture',
+				    dataType: 'text',
+				    data:  {
+				    	f_index : snap,
+				    	f_code : '{f_code}',
+				    	f_image : canvas.toDataURL()
+				    },
+				    success: function (data) {
+				    	let json = JSON.parse(data);
+
+				    	if (json.matching) {
+				    		$('#vision_result').empty().append('<img src="/img/coche_verte.png" width="100px"></img>');
+				    	}
+				    	else {
+				    		$('#vision_result').empty().append('<img src="/img/croix_rouge.png" width="100px"></img>');
+				    	}
+
+				    	$('#vision_result').show();
+						setTimeout(function () {
+						  $("#vision_result").hide();
+						}, 4000);
+
+	                },
+	                error: function(err) {
+	                	console.log("Error detected");
+	                }
+				});
+			{/google_vision}
+
+		  }
+		}
+
+
+
+		/* Special functions */
+		$(document).keydown(function(key) {
+			switch(parseInt(key.which, 10)) {
+				case 67:
+					snapshot();
+					break;
+				case 70:
+					openFullscreen();
+					break;
+				case 84:
+					displayTarget();
+					break;
+				case 86:
+					openDialogDiving();
+					break;
+				case 106:
+					overlay();
+					break;
+				case 170:
+					overlay();
+					break;
+				case 13:
+					key_event = true;
+					$('#arm').prop('checked', true).change();
+					break;
+				case 74:
+					key_event = true;
+					$('#arm').prop('checked', false).change();
+					break;
+				default:
+					break;
+			}
+		});
+	</script>
+
+  </head>
+  <body>
+	<div class="container-md">
+	  <header class="header">
+		  <div id="logo-container" class="logo-container">
+			<img src="/img/logo_ender_ocean.png" alt="logo" class="logo-img" />
+			<a class="btn btn-transparent float-right" style="margin: 30px 20px 0px 0px;" href="#" onclick="javascript:window.history.back();"><i class="fa fa-arrow-left"></i>&nbsp;&nbsp;{#__ key="home.back"/}</a>
+		  </div>
+	  </header>
+	  <div class="content-container">
+
+		<div class="active-users-panel" id="active-user-container">
+		  <h3 class="panel-title">{#__ key="home.configuration"/}</h3>
+
+			<!-- Buttons -->
+			<p style="text-align: center; padding-top: 15px;">
+				<a class="btn btn-success btn-formatted" href="#" onclick="javascript:openFullscreen();"><i class="fa fa-desktop"></i>&nbsp;&nbsp;{#__ key="home.fullscreen"/}</a>&nbsp;&nbsp;&nbsp;
+				<a class="btn btn-info btn-formatted" href="#" onclick="javascript:displayTarget();">
+				<img src="/img/target_light.png" width="20px" style="margin-top: -5px; margin-left: -5px;" />&nbsp;&nbsp;{#__ key="home.target"/}
+				</a>
+
+				<button style="margin-top: 15px;" class="btn btn-warning btn-formatted" onclick="javascript:snapshot();"><i class="fa fa-camera"></i>&nbsp;&nbsp; {#__ key="home.capture"/}</button>&nbsp;&nbsp;&nbsp;
+				<a style="margin-top: 15px;" class="btn btn-secondary btn-formatted" href="#" onclick="javascript:openDialogDiving();"><i class="fa fa-wpexplorer" style="font-size: 20px;"></i>&nbsp;&nbsp;{#__ key="home.visualize"/}</a>
+				<br><br><br>
+			</p>
+
+			<!-- Controller Help -->
+			<p style="text-align: center; padding: 15px;">
+				<div id="mapping_keyboard" style="display: none; text-align: center;">
+				  {#__ key="home.keyboard_controller"/}<br><br>
+				  <a class="btn btn-secondary" href="#" onclick="javascript:openDialogKeyboard();"><i class="fa fa-question-circle"></i>&nbsp;&nbsp;{#__ key="home.keyboard_mapping"/}</a>
+				</div>
+				<div id="mapping_gamepad" style="display: none; text-align: center;">
+				  {#__ key="home.gamepad_controller"/} <span id="controller_name"></span><br><br>
+				  <a class="btn btn-secondary" href="#" onclick="javascript:openDialogGamepad();"><i class="fa fa-question-circle"></i>&nbsp;&nbsp;{#__ key="home.gamepad_mapping"/}</a><br>
+				</div>
+			</p>
+
+			<!-- Console -->
+			<p style="text-align: center; padding: 15px;">
+				
+				<button class="btn btn-light" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+				{#__ key="home.console"/}
+				</button>
+			  </p>
+
+		</div>
+		<div class="video-chat-container">
+		  <h2 class="talk-info" id="talking-with-info">
+			Drone #1
+		  </h2>
+		  <div class="video-container">
+
+			<!-- Horloge -->
+			<div style="text-align: center; margin-top: -30px; width: 100%;">
+			  <h5 class="text-black"><i class="fa fa-clock-o text-primary"></i>&nbsp;&nbsp;{#__ key="home.local_time"/}</h5>
+			  <div id="div_horloge"></div>
+			  <br>
+			</div>
+
+			<!-- Video -->
+			<div id="vid" class="video-wrapper">
+			  <video id="videoTag" playsinline autoplay muted ></video>
+			  <img id="loader" src="/img/loader.gif" />
+			  <img id="target" src="/img/viseur.png" />
+
+			  <!-- Google vision result -->
+			  <div id="vision_result" class="vision_result"></div>
+			  <div id="canvas_thumbnail" class="canvas_thumbnail"><canvas id="canvas_mini"></canvas></div>
+			  <!-- <div id="radio"><img class="radio" src="/img/radio.gif" /></div> -->
+			  <div id="overlay"></div>
+			  <div class="charts"></div>
+				<img class="logo_long" src="/img/ender_long_blanc.png" width="250" />
+				<div class="triangle"></div>
+				<div class="compass_group">
+					<h6>{#__ key="home.orientation"/}</h6>
+					<img id="compass" class="compass" src="/img/compass_black.png" width="100"></img>
+				</div>
+				<div class="altitude_group">
+					<h6>{#__ key="home.profondeur"/}</h6>
+					<span id="altitude" class="altitude"></span>m
+				</div>
+				<div class="battery_group">
+					{#__ key="home.battery"/}&nbsp;&nbsp;<i id="level" class="fa fa-battery-full" aria-hidden="true"></i>&nbsp;&nbsp;
+					<span id="battery" class="battery"></span>%
+					
+				</div>
+				<div class="buttons_group">
+					
+					<input id="arm" type="checkbox" data-toggle="toggle" data-on="Armed" data-off="Disarmed">
+					
+				</div>
+
+
+
+				<div class="mode_group">
+
+					<div class="custom-control custom-radio">
+					  <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input" value="MANUAL_MODE" checked>
+					  <label class="custom-control-label" for="customRadio1">{#__ key="home.radio_manual_mode"/}</label>
+					</div>
+
+					<div class="custom-control custom-radio">
+					  <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input" value="STABILIZE">
+					  <label class="custom-control-label" for="customRadio2">{#__ key="home.radio_stabilize"/}</label>
+					</div>
+
+					<div class="custom-control custom-radio">
+					  <input type="radio" id="customRadio3" name="customRadio" class="custom-control-input" value="POSHOLD">
+					  <label class="custom-control-label" for="customRadio3">{#__ key="home.radio_poshold"/}</label>
+					</div>
+
+					<div class="custom-control custom-radio">
+					  <input type="radio" id="customRadio4" name="customRadio" class="custom-control-input" value="DEPTH_HOLD">
+					  <label class="custom-control-label" for="customRadio4">{#__ key="home.radio_depth_hold"/}</label>
+					</div>
+
+				</div>
+				<!-- 
+			  <div id="small_keys">
+			  	Move<br>
+			  	<span class="small_key">Z</span>
+			  	<span class="small_key">S</span>
+			  	<span class="small_key">Q</span>
+			  	<span class="small_key">D</span>
+			  	<br><br>
+			  	Turn&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dive&nbsp;&nbsp;<br>
+			  	<span class="small_key">&larr;</span>
+			  	<span class="small_key">&rarr;</span>&nbsp;&nbsp;
+			  	<span class="small_key">&uarr;</span>
+			  	<span class="small_key">&darr;</span>
+			  </div> -->
+			</div>
+			<div id="show_plug" style="display: none;text-align: center; padding-top: 30px; padding-bottom: 30px;" translate="no">
+				<h4>{#__ key="home.plug_gamepad"/}</h4>
+			</div>
+			<div id="show_success" style="display: none;text-align: center; padding-top: 30px; display: none;" translate="no">
+				<h4>{#__ key="home.gamepad_connected"/}</h4>
+			</div>
+ 
+			<!-- Diving review -->
+			<div id="modalHTMLDiving" style="display:none; width: 75%; overflow-y: auto;">
+			  <br><br>
+			  <div id="carousel-diaporama" class="carousel slide carousel-fade" data-ride="carousel">
+				<!--Indicators-->
+				<ol id="carousel-indicators" class="carousel-indicators"></ol>
+				<!--/.Indicators-->
+				<!--Slides-->
+				<div id="carousel-inner" class="carousel-inner" role="listbox"></div>
+				<a class="carousel-control-prev" href="#carousel-diaporama" role="button" data-slide="prev">
+				  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				  <span class="sr-only">{#__ key="button.previous"/}</span>
+				</a>
+				<a class="carousel-control-next" href="#carousel-diaporama" role="button" data-slide="next">
+				  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+				  <span class="sr-only">{#__ key="button.next"/}</span>
+				</a>
+				<!--/.Controls-->
+			  </div>
+			  <!--/.Carousel Wrapper-->
+			</div>
+
+
+
+			<!-- Modal Keyboard -->
+
+			<div id="modalHTMLKeyboard" style="display:none; width: 50%;">
+				<h2>{#__ key="home.keyboard_mapping"/}</h2>
+				<br><br>
+				<h4>{#__ key="home.move"/}</h4>
+			  <div class="row">
+				<div class="col-4">
+				  
+				  <div class="row bigrow">
+					<div class="col-4">
+					  <div class="key key-large">Enter</div>
+					</div>
+					<div class="col-8 margin-top-10"> {#__ key="home.switch_on"/}
+					</div>
+				  </div>
+
+				  <div class="row bigrow">
+					<div class="col-4">
+					  <div class="key">J</div>
+					</div>
+					<div class="col-8 margin-top-10"> {#__ key="home.switch_off"/}
+					</div>
+				  </div>
+
+				</div>
+				<div class="col-4">
+				  
+				  <div class="row bigrow">
+					<div class="col-2">
+					  <div class="key">Z</div>
+					</div>
+					<div class="col-2">
+					  <div class="key">W</div>
+					</div>
+					<div class="col-8 margin-top-10"> {#__ key="home.go_forward"/}
+					</div>
+				  </div>
+
+				  <div class="row bigrow">
+					<div class="col-4">
+					  <div class="key">S</div>
+					</div>
+					<div class="col-8 margin-top-10"> {#__ key="home.go_back"/}
+					</div>
+				  </div>
+
+				  <div class="row bigrow">
+					<div class="col-2">
+					  <div class="key">Q</div>
+					</div>
+					<div class="col-2">
+					  <div class="key">A</div>
+					</div>
+					<div class="col-8 margin-top-10"> {#__ key="home.move_lateral_left"/}
+					</div>
+				  </div>
+
+				  <div class="row bigrow">
+					<div class="col-4">
+					  <div class="key">D</div>
+					</div>
+					<div class="col-8 margin-top-10"> {#__ key="home.move_lateral_right"/}
+					</div>
+				  </div>
+				</div>
+				<div class="col-4">
+				  <div class="row bigrow">
+					<div class="col-2">
+					  <div class="key">&uarr;</div>
+					</div>
+					<div class="col-10 margin-top-10"> {#__ key="home.go_up"/}
+					</div>
+				  </div>
+
+				  <div class="row bigrow">
+					<div class="col-2">
+					  <div class="key">&darr;</div>
+					</div>
+					<div class="col-10 margin-top-10"> {#__ key="home.go_down"/}
+					</div>
+				  </div>
+
+				  <div class="row bigrow">
+					<div class="col-2">
+					  <div class="key">&larr;</div>
+					</div>
+					<div class="col-10 margin-top-10"> {#__ key="home.turn_left"/}
+					</div>
+				  </div>
+
+				  <div class="row bigrow">
+					<div class="col-2">
+					  <div class="key">&rarr;</div>
+					</div>
+					<div class="col-10 margin-top-10"> {#__ key="home.turn_right"/}
+					</div>
+				  </div>
+
+				</div>
+			  </div>
+			  <div class="row">
+				<div class="col-4">
+				  <div class="row bigrow">
+					<div class="col-4">
+					  <div class="key key-large">Tab</div>
+					</div>
+					<div class="col-8 margin-top-10"> {#__ key="home.stabilize"/}
+					</div>
+				  </div>
+
+				  <div class="row bigrow">
+					<div class="col-4">
+					  <div class="key key-large">Backspace</div>
+					</div>
+					<div class="col-8 margin-top-10"> {#__ key="home.position_hold"/}
+					</div>
+				  </div>
+
+				</div>
+				<div class="col-4">
+
+				  <div class="row bigrow">
+					<div class="col-2">
+					  <div class="key">X</div>
+					</div>
+					<div class="col-10 margin-top-10"> {#__ key="home.manual_mode"/}
+					</div>
+				  </div>
+
+				  <div class="row bigrow">
+					<div class="col-2">
+					  <div class="key">Y</div>
+					</div>
+					<div class="col-10 margin-top-10"> {#__ key="home.depth_hold"/}
+					</div>
+				  </div>
+
+				</div>
+				<div class="col-4">
+				  <div class="row bigrow">
+					<div class="col-2">
+					  <div class="key">F1</div>
+					</div>
+					<div class="col-10 margin-top-10"> {#__ key="home.decrease_speed"/}
+					</div>
+				  </div>
+
+				  <div class="row bigrow">
+					<div class="col-2">
+					  <div class="key">F2</div>
+					</div>
+					<div class="col-10 margin-top-10"> {#__ key="home.increase_speed"/}
+					</div>
+				  </div>
+				</div>
+			</div>
+			<br>
+			<br>
+			<h4>{#__ key="home.execute_actions"/}</h4>
+			<div class="row">
+				<div class="col-4">
+				  <div class="row bigrow">
+					<div class="col-2">
+					  <div class="key">F3</div>
+					</div>
+					<div class="col-10 margin-top-10"> {#__ key="home.decrease_lights"/}
+					</div>
+				  </div>
+
+				  <div class="row bigrow">
+					<div class="col-2">
+					  <div class="key">F4</div>
+					</div>
+					<div class="col-10 margin-top-10"> {#__ key="home.increase_lights"/}
+					</div>
+				  </div>
+
+				</div>
+
+				<div class="col-4">
+
+
+				  <div class="row bigrow">
+					<div class="col-2">
+					  <div class="key">L</div>
+					</div>
+					<div class="col-10 margin-top-10"> {#__ key="home.mount_camera_down"/}
+					</div>
+				  </div>
+
+				  <div class="row bigrow">
+					<div class="col-2">
+					  <div class="key">M</div>
+					</div>
+					<div class="col-10 margin-top-10"> {#__ key="home.mount_camera_up"/}</div>
+				</div>
+				</div>
+
+
+				<div class="col-4">
+
+
+				  <div class="row bigrow">
+					<div class="col-2">
+					  <div class="key">O</div>
+					</div>
+					<div class="col-10 margin-top-10"> {#__ key="home.open_gripper"/}
+					</div>
+				  </div>
+
+				  <div class="row bigrow">
+					<div class="col-2">
+					  <div class="key">P</div>
+					</div>
+					<div class="col-10 margin-top-10"> {#__ key="home.close_gripper"/}
+					</div>
+				  </div>
+
+				</div>
+
+			  </div>
+			</div>
+
+
+
+
+			  <!-- Mapping Gamepad-->
+
+			<div id="modalHTMLGamepad" style="display:none; width: 50%;">
+				<h2>{#__ key="home.gamepad_mapping"/}</h2>
+				<br><hr><br>
+			  <div class="row">
+				<div class="col-4">
+				  <h5>{#__ key="home.buttons"/}</h5>                  
+				  <div class="row bigrow">
+					<div class="col-4">
+					  <div class="key key-large">START</div>
+					</div>
+					<div class="col-8 margin-top-10"> {#__ key="home.switch_on"/}
+					</div>
+				  </div>
+
+				  <div class="row bigrow">
+					<div class="col-4">
+					  <div class="key key-large">SELECT</div>
+					</div>
+					<div class="col-8 margin-top-10"> {#__ key="home.switch_off"/}
+					</div>
+				  </div>
+
+				</div>
+				<div class="col-4">
+				  <h5>{#__ key="home.joystick_1"/}</h5>
+				  <div class="row bigrow">
+					<div class="col-3">
+					  
+					  <div class="stick" style="padding-left: 17px;">&#9651;</div>
+					</div>
+					<div class="col-9 margin-top-10"> {#__ key="home.go_forward"/}
+					</div>
+				  </div>
+
+				  <div class="row bigrow">
+					<div class="col-3">
+					  <div class="stick" style="padding-left: 17px; padding-top: 20px;">&#9661;</div>
+					</div>
+					<div class="col-9 margin-top-10"> {#__ key="home.go_back"/}
+					</div>
+				  </div>
+
+				  <div class="row bigrow">
+					<div class="col-3">
+					  <div class="stick" style="padding-left: 7px; padding-top: 10px;">&#9665;</div>
+					</div>
+					<div class="col-9 margin-top-10"> {#__ key="home.move_lateral_left"/}
+					</div>
+				  </div>
+
+				  <div class="row bigrow">
+					<div class="col-3">
+					  <div class="stick" style="padding-left: 27px; padding-top: 10px;">&#9655;</div>
+					</div>
+					<div class="col-9 margin-top-10"> {#__ key="home.move_lateral_right"/}
+					</div>
+				  </div>
+
+				</div>
+
+				<div class="col-4">
+				  <h5>{#__ key="home.joystick_2"/}</h5>
+				  <div class="row bigrow">
+					<div class="col-3">
+					  
+					  <div class="stick" style="padding-left: 17px;">&#9651;</div>
+					</div>
+					<div class="col-9 margin-top-10"> {#__ key="home.go_up"/}
+					</div>
+				  </div>
+
+				  <div class="row bigrow">
+					<div class="col-3">
+					  <div class="stick" style="padding-left: 17px; padding-top: 20px;">&#9661;</div>
+					</div>
+					<div class="col-9 margin-top-10"> {#__ key="home.go_down"/}
+					</div>
+				  </div>
+
+				  <div class="row bigrow">
+					<div class="col-3">
+					  <div class="stick" style="padding-left: 7px; padding-top: 10px;">&#9665;</div>
+					</div>
+					<div class="col-9 margin-top-10"> {#__ key="home.turn_left"/}
+					</div>
+				  </div>
+
+				  <div class="row bigrow">
+					<div class="col-3">
+					  <div class="stick" style="padding-left: 27px; padding-top: 10px;">&#9655;</div>
+					</div>
+					<div class="col-9 margin-top-10"> {#__ key="home.turn_right"/}
+					</div>
+				  </div>
+
+				</div>
+			  </div>
+			  <br><br>
+			  <div class="row">
+				<div class="col-4">
+				  <h5>{#__ key="home.digital_pad"/}</h5> 
+				  <div class="row bigrow">
+					<div class="col-2">
+					  <div class="pad">&#9650;</div>
+					</div>
+					<div class="col-10 margin-top-10"> {#__ key="home.increase_speed"/}
+					</div>
+				  </div>
+
+				  <div class="row bigrow">
+					<div class="col-2">
+					  <div class="pad">&#9660;</div>
+					</div>
+					<div class="col-10 margin-top-10"> {#__ key="home.decrease_speed"/}
+					</div>
+				  </div>
+
+				  <div class="row bigrow">
+					<div class="col-2">
+					  <div class="pad">&#9664;</div>
+					</div>
+					<div class="col-10 margin-top-10"> {#__ key="home.decrease_lights"/}
+					</div>
+				  </div>
+
+				  <div class="row bigrow">
+					<div class="col-2">
+					  <div class="pad">&#9654;</div>
+					</div>
+					<div class="col-10 margin-top-10"> {#__ key="home.increase_lights"/}
+					</div>
+				  </div>
+
+				</div>
+				<div class="col-4">
+				  <h5>{#__ key="home.buttons"/}</h5> 
+				  <div class="row bigrow">
+					<div class="col-3">
+					  <div class="button">A</div>
+					</div>
+					<div class="col-9 margin-top-10"> {#__ key="home.stabilize"/}
+					</div>
+				  </div>
+
+				  <div class="row bigrow">
+					<div class="col-3">
+					  <div class="button">B</div>
+					</div>
+					<div class="col-9 margin-top-10"> {#__ key="home.position_hold"/}
+					</div>
+				  </div>
+
+				  <div class="row bigrow">
+					<div class="col-3">
+					  <div class="button">X</div>
+					</div>
+					<div class="col-9 margin-top-10"> {#__ key="home.manual_mode"/}
+					</div>
+				  </div>
+
+				  <div class="row bigrow">
+					<div class="col-3">
+					  <div class="button">Y</div>
+					</div>
+					<div class="col-9 margin-top-10"> {#__ key="home.depth_hold"/}
+					</div>
+				  </div>
+
+				</div>
+				<div class="col-4">
+				  <br>                  
+				  <div class="row bigrow">
+					<div class="col-3">
+					  <div class="key">L1</div>
+					</div>
+					<div class="col-9 margin-top-10"> {#__ key="home.mount_camera_down"/}
+					</div>
+				  </div>
+
+				  <div class="row bigrow">
+					<div class="col-3">
+					  <div class="key">R1</div>
+					</div>
+					<div class="col-9 margin-top-10"> {#__ key="home.mount_camera_up"/}
+					</div>
+				  </div>
+				  <div class="row bigrow">
+					<div class="col-3">
+					  <div class="key">TL2</div>
+					</div>
+					<div class="col-9 margin-top-10"> {#__ key="home.open_gripper"/}
+					</div>
+				  </div>
+
+				  <div class="row bigrow">
+					<div class="col-3">
+					  <div class="key">TR2</div>
+					</div>
+					<div class="col-9 margin-top-10"> {#__ key="home.close_gripper"/}
+					</div>
+				  </div>
+				</div>
+			   </div>
+			</div>
+			</div>
+		</div>
+		<div class="console">
+			<br>
+			<div class="collapse" id="collapseExample">
+				<!-- Debugger -->
+				<input type="checkbox" id="dev_gamepad" onclick="resetDev(); resetHistory();"
+				><label class="label-inline" for="dev_gamepad" >{#__ key="home.gamepad"/}</label>&nbsp; 
+				<!-- <input type="checkbox" id="dev_mouse" onclick="resetDev(); resetHistory();"
+				><label class="label-inline" for="dev_mouse" >Mouse</label>&nbsp; -->
+				<input type="checkbox" id="dev_keyboard" onclick="resetDev(); resetHistory();"
+				><label class="label-inline" for="dev_keyboard">{#__ key="home.keyboard"/}</label>&nbsp; 
+				<!--(<input type="checkbox" id="dev_moveless" onclick="resetDev(); resetHistory();"
+				><label class="label-inline" for="dev_moveless">moveless</label>) -->
+				<br><br>
+				<textarea style="width: 100%;" id="event_history" rows="9"></textarea>
+
+			</div>
+		</div>
+	  </div>
+
+	</div>
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="/watch.js"></script>
+  </body>
+</html>

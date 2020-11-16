@@ -1,0 +1,9 @@
+[
+    {
+        "target": "e_task",
+        "relation": "belongsTo",
+        "foreignKey": "fk_id_task",
+        "as": "r_task_documents_task",
+        "structureType": "auto_generate"
+    }
+]

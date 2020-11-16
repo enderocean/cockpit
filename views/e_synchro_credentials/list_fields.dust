@@ -1,0 +1,56 @@
+<table id="table_e_synchro_credentials" data-url="/synchro_credentials/datalist" class="dataTable table table-bordered table-striped animated fadeIn" style="display: none;">
+    <thead class="main">
+        <tr class="fields">
+            <th data-field="id" data-col="id">
+                {#__ key="entity.e_synchro_credentials.id_entity"/}&nbsp;
+                {#__ key="entity.e_synchro_credentials.label_entity"/}
+            </th>
+            <th data-field="f_cloud_host" data-col="f_cloud_host" data-type="url">
+                {#__ key="entity.e_synchro_credentials.f_cloud_host"/}
+            </th>
+            <th data-field="f_client_key" data-col="f_client_key" data-type="string">
+                {#__ key="entity.e_synchro_credentials.f_client_key"/}
+            </th>
+            <th data-field="f_client_secret" data-col="f_client_secret" data-type="string">
+                {#__ key="entity.e_synchro_credentials.f_client_secret"/}
+            </th>
+            {#actionAccess entity="synchro_credentials" action="read"}
+            <th></th>
+            {/actionAccess}
+            {#actionAccess entity="synchro_credentials" action="update"}
+            <th></th>
+            {/actionAccess}
+            {#actionAccess entity="synchro_credentials" action="delete"}
+            <th></th>
+            {/actionAccess}
+        </tr>
+    </thead>
+    <thead class="filters">
+        <tr class="fields">
+            <th data-field="id" data-col="id">
+                {#__ key="entity.e_synchro_credentials.id_entity"/}&nbsp;
+                {#__ key="entity.e_synchro_credentials.label_entity"/}
+            </th>
+            <th data-field="f_cloud_host" data-col="f_cloud_host" data-type="url">
+                {#__ key="entity.e_synchro_credentials.f_cloud_host"/}
+            </th>
+            <th data-field="f_client_key" data-col="f_client_key" data-type="string">
+                {#__ key="entity.e_synchro_credentials.f_client_key"/}
+            </th>
+            <th data-field="f_client_secret" data-col="f_client_secret" data-type="string">
+                {#__ key="entity.e_synchro_credentials.f_client_secret"/}
+            </th>
+            {#actionAccess entity="synchro_credentials" action="read"}
+            <th></th>
+            {/actionAccess}
+            {#actionAccess entity="synchro_credentials" action="update"}
+            <th></th>
+            {/actionAccess}
+            {#actionAccess entity="synchro_credentials" action="delete"}
+            <th></th>
+            {/actionAccess}
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>

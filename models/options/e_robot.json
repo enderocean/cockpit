@@ -1,0 +1,23 @@
+[
+    {
+        "target": "e_api_credentials",
+        "relation": "belongsTo",
+        "foreignKey": "fk_id_api_credentials_api_credentials",
+        "as": "r_api_credentials",
+        "showAs": "Api credentials",
+        "structureType": "relatedTo",
+        "usingField": [
+            {
+                "value": "f_client_name",
+                "type": "string"
+            }
+        ]
+    },
+    {
+        "target": "e_task",
+        "relation": "hasMany",
+        "foreignKey": "fk_id_robot_robot",
+        "as": "r_task",
+        "structureType": "auto_generate"
+    }
+]

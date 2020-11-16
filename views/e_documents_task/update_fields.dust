@@ -1,0 +1,14 @@
+<div id="fields" class="row">
+    <div data-field="f_filename" class="fieldLineHeight col-xs-12">
+        <div class="form-group">
+            <label for="f_filename">
+                {#__ key="entity.e_documents_task.f_filename"/}&nbsp;
+                {@inline_help field="f_filename"}
+                <i data-field="f_filename" class="inline-help fa fa-info-circle" style="color: #1085EE;"></i>
+                {/inline_help}
+            </label>
+            <div class="dropzone dropzone-field" id="f_filename_dropzone" data-entity="e_documents_task"></div>
+            <input type="hidden" name="f_filename" id="f_filename_dropzone_hidden" value="{f_filename}">
+        </div>
+    </div>
+</div>

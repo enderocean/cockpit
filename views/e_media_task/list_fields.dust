@@ -1,0 +1,68 @@
+<table id="table_e_media_task" data-url="/media_task/datalist" class="dataTable table table-bordered table-striped animated fadeIn" style="display: none;">
+    <thead class="main">
+        <tr class="fields">
+            <th data-field="id" data-col="id">
+                {#__ key="entity.e_media_task.id_entity"/}&nbsp;
+                {#__ key="entity.e_media_task.label_entity"/}
+            </th>
+            <th data-field="f_task_name" data-col="f_task_name" data-type="string">
+                {#__ key="entity.e_media_task.f_task_name"/}
+            </th>
+            <th data-field="f_task_type" data-col="f_task_type" data-type="enum">
+                {#__ key="entity.e_media_task.f_task_type"/}
+            </th>
+            <th data-field="f_assignment_logic" data-col="f_assignment_logic" data-type="string">
+                {#__ key="entity.e_media_task.f_assignment_logic"/}
+            </th>
+            <th data-field="f_program_file" data-col="f_program_file" data-type="file">
+                {#__ key="entity.e_media_task.f_program_file"/}
+            </th>
+            <th data-field="f_data_flow" data-col="f_data_flow" data-type="text">
+                {#__ key="entity.e_media_task.f_data_flow"/}
+            </th>
+            {#actionAccess entity="media_task" action="read"}
+            <th></th>
+            {/actionAccess}
+            {#actionAccess entity="media_task" action="update"}
+            <th></th>
+            {/actionAccess}
+            {#actionAccess entity="media_task" action="delete"}
+            <th></th>
+            {/actionAccess}
+        </tr>
+    </thead>
+    <thead class="filters">
+        <tr class="fields">
+            <th data-field="id" data-col="id">
+                {#__ key="entity.e_media_task.id_entity"/}&nbsp;
+                {#__ key="entity.e_media_task.label_entity"/}
+            </th>
+            <th data-field="f_task_name" data-col="f_task_name" data-type="string">
+                {#__ key="entity.e_media_task.f_task_name"/}
+            </th>
+            <th data-field="f_task_type" data-col="f_task_type" data-type="enum">
+                {#__ key="entity.e_media_task.f_task_type"/}
+            </th>
+            <th data-field="f_assignment_logic" data-col="f_assignment_logic" data-type="string">
+                {#__ key="entity.e_media_task.f_assignment_logic"/}
+            </th>
+            <th data-field="f_program_file" data-col="f_program_file" data-type="file">
+                {#__ key="entity.e_media_task.f_program_file"/}
+            </th>
+            <th data-field="f_data_flow" data-col="f_data_flow" data-type="text">
+                {#__ key="entity.e_media_task.f_data_flow"/}
+            </th>
+            {#actionAccess entity="media_task" action="read"}
+            <th></th>
+            {/actionAccess}
+            {#actionAccess entity="media_task" action="update"}
+            <th></th>
+            {/actionAccess}
+            {#actionAccess entity="media_task" action="delete"}
+            <th></th>
+            {/actionAccess}
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>

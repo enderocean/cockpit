@@ -1,0 +1,13 @@
+<div id="fields" class="row">
+    <div data-field="f_label" class="fieldLineHeight col-xs-12">
+        <div class="form-group">
+            <label for="f_label" class="required">
+                {#__ key="entity.e_group.f_label"/}&nbsp;
+                {@inline_help field="f_label"}
+                <i data-field="f_label" class="inline-help fa fa-info-circle" style="color: #1085EE;"></i>
+                {/inline_help}
+            </label>
+            <input class="form-control input" placeholder='{#__ key="entity.e_group.f_label" /}' name="f_label" value="{f_label}" type="text" maxlength="255" required="">
+        </div>
+    </div>
+</div>

@@ -1,0 +1,64 @@
+<table id="table_e_robot" data-url="/robot/datalist" class="dataTable table table-bordered table-striped animated fadeIn" style="display: none;">
+    <thead class="main">
+        <tr class="fields">
+            <th data-field="id" data-col="id">
+                {#__ key="entity.e_robot.id_entity"/}&nbsp;
+                {#__ key="entity.e_robot.label_entity"/}
+            </th>
+            <th data-field="f_current_status" data-col="f_current_status" data-type="enum">
+                {#__ key="entity.e_robot.f_current_status"/}
+            </th>
+            <th data-field="f_name" data-col="f_name" data-type="string">
+                {#__ key="entity.e_robot.f_name"/}
+            </th>
+            <th data-field="r_api_credentials" data-col="r_api_credentials.f_client_name" data-type="string">
+                {#__ key="entity.e_robot.r_api_credentials"/}&nbsp;-&nbsp;
+                {#__ key="entity.e_api_credentials.f_client_name"/}
+            </th>
+            <th data-field="f_comment" data-col="f_comment" data-type="text">
+                {#__ key="entity.e_robot.f_comment"/}
+            </th>
+            {#actionAccess entity="robot" action="read"}
+            <th></th>
+            {/actionAccess}
+            {#actionAccess entity="robot" action="update"}
+            <th></th>
+            {/actionAccess}
+            {#actionAccess entity="robot" action="delete"}
+            <th></th>
+            {/actionAccess}
+        </tr>
+    </thead>
+    <thead class="filters">
+        <tr class="fields">
+            <th data-field="id" data-col="id">
+                {#__ key="entity.e_robot.id_entity"/}&nbsp;
+                {#__ key="entity.e_robot.label_entity"/}
+            </th>
+            <th data-field="f_current_status" data-col="f_current_status" data-type="enum">
+                {#__ key="entity.e_robot.f_current_status"/}
+            </th>
+            <th data-field="f_name" data-col="f_name" data-type="string">
+                {#__ key="entity.e_robot.f_name"/}
+            </th>
+            <th data-field="r_api_credentials" data-col="r_api_credentials.f_client_name" data-type="string">
+                {#__ key="entity.e_robot.r_api_credentials"/}&nbsp;-&nbsp;
+                {#__ key="entity.e_api_credentials.f_client_name"/}
+            </th>
+            <th data-field="f_comment" data-col="f_comment" data-type="text">
+                {#__ key="entity.e_robot.f_comment"/}
+            </th>
+            {#actionAccess entity="robot" action="read"}
+            <th></th>
+            {/actionAccess}
+            {#actionAccess entity="robot" action="update"}
+            <th></th>
+            {/actionAccess}
+            {#actionAccess entity="robot" action="delete"}
+            <th></th>
+            {/actionAccess}
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>

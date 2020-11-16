@@ -1,0 +1,88 @@
+<div id="fields" class="row">
+
+    <div data-field="f_media" class="fieldLineHeight col-xs-12">
+        <div class="form-group">
+            <label for="r_media">
+                {#__ key="entity.e_action.r_media" /}&nbsp;
+                {@inline_help field="r_media"}
+                <i data-field="r_media" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+            <input class="form-control input" name="r_media" value="{r_media.f_name|string}" placeholder='{#__ key="entity.e_action.r_media" /}' type="text" readonly="">
+        </div>
+    </div>
+    <div data-field="f_order" class="fieldLineHeight col-xs-12">
+        <div class="form-group">
+            <label for="f_order">
+                {#__ key="entity.e_action.f_order"/}&nbsp;
+                {@inline_help field="f_order"}
+                <i data-field="f_order" class="inline-help fa fa-info-circle" style="color: #1085EE;"></i>
+                {/inline_help}
+            </label>
+            <input class="form-control input" placeholder='{#__ key="entity.e_action.f_order" /}' name="f_order" value="{f_order}" type="number" max="2147483648" readonly="">
+        </div>
+    </div>
+    <div data-field="f_execution" class="fieldLineHeight col-xs-12">
+        <div class="form-group">
+            <label for="f_execution">
+                {#__ key="entity.e_action.f_execution"/}&nbsp;
+                {@inline_help field="f_execution"}
+                <i data-field="f_execution" class="inline-help fa fa-info-circle" style="color: #1085EE;"></i>
+                {/inline_help}
+            </label>
+            {^f_execution}
+            <input class="form-control input" placeholder='{#__ key="entity.e_action.f_execution" /}' name="f_execution" type="text" readonly="">
+            {/f_execution}
+            {#enum_radio.e_action.f_execution}
+            {@eq key=f_execution value="{.value}" }
+            <input class="form-control input" placeholder='{#__ key="entity.e_action.f_execution" /}' name="f_execution" value="{.translation}" type="text" readonly="">
+            {/eq}
+            {/enum_radio.e_action.f_execution}
+        </div>
+    </div>
+</div>
+<div class="actions">
+    <form action="/action/delete" method="post">
+        <div class="quicklinks">
+            <a class="btn btn-default" href="javascript:history.back();">
+                <i class="fa fa-arrow-left"></i>&nbsp;&nbsp;
+                {#__ key="button.return"/}
+            </a>
+            {#actionAccess entity="action" action="delete"}
+            <button class="btn btn-danger btn-confirm">
+                <i class="fa fa-trash-o fa-md">&nbsp;&nbsp;</i>
+                <span>
+                    {#__ key="button.delete"/}
+                </span>
+            </button>
+            <input name="id" type="hidden" value="{e_action.id}" class="form-control">
+            {/actionAccess}
+            {#actionAccess entity="action" action="update"}
+            <a href="/action/update_form?id={e_action.id}" class="btn btn-warning">
+                <i class="fa fa-pencil fa-md">&nbsp;&nbsp;</i>
+                <span>
+                    {#__ key="button.update"/}
+                </span>
+            </a>
+            {/actionAccess}
+            {^hideButton}
+            {#actionAccess entity="action" action="create"}
+            <a href="/action/create_form" class="btn btn-success">
+                <i class="fa fa-plus fa-md">&nbsp;&nbsp;</i>
+                <span>
+                    {#__ key="button.create"/}
+                </span>
+            </a>
+            {/actionAccess}
+            {#actionAccess entity="action" action="read"}
+            <a href="/action/list" type="submit" class="btn btn-primary">
+                <i class="fa fa-list fa-md">&nbsp;&nbsp;</i>
+                <span>
+                    {#__ key="button.list"/}
+                </span>
+            </a>
+            {/actionAccess}
+            {/hideButton}
+        </div>
+    </form>
+</div>

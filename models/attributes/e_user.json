@@ -1,0 +1,52 @@
+{
+    "id": {
+        "type": "INTEGER",
+        "autoIncrement": true,
+        "primaryKey": true
+    },
+    "version": {
+        "type": "INTEGER",
+        "defaultValue": 1
+    },
+    "createdBy": {
+        "type": "STRING",
+        "defaultValue": null,
+        "validate": false
+    },
+    "updatedBy": {
+        "type": "STRING",
+        "defaultValue": null,
+        "validate": false
+    },
+    "f_login": {
+        "type": "STRING",
+        "newmipsType": "string",
+        "defaultValue": null,
+        "validate": true,
+        "unique": true
+    },
+    "f_password": {
+        "type": "STRING",
+        "newmipsType": "string",
+        "defaultValue": null,
+        "validate": true
+    },
+    "f_email": {
+        "type": "STRING",
+        "newmipsType": "email",
+        "defaultValue": null,
+        "validate": true
+    },
+    "f_token_password_reset": {
+        "type": "STRING",
+        "newmipsType": "string",
+        "defaultValue": null,
+        "validate": true
+    },
+    "f_enabled": {
+        "type": "INTEGER",
+        "newmipsType": "number",
+        "defaultValue": null,
+        "validate": true
+    }
+}

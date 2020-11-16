@@ -1,0 +1,86 @@
+<div class="nav-tabs-custom" id="tabs">
+    {^hideTab}
+    <ul class="nav nav-tabs">
+        <li class="active">
+            <a data-toggle="tab" href="#home">
+                {#__ key="entity.e_role.label_entity" /}</a>
+        </li>
+        {#entityAccess entity="user"}
+        <li>
+            <a id="r_user-click" data-toggle="tab" data-tabtype="hasMany" href="#r_user">
+                {#__ key="entity.e_role.r_user" /}
+            </a>
+        </li>
+        {/entityAccess}
+    </ul>
+    {/hideTab}
+    <div class="tab-content" style="min-height:275px;">
+        <div id="home" class="tab-pane fade in active">
+            <div id="fields" class="row">
+                <div data-field="f_label" class="fieldLineHeight col-xs-12">
+                    <div class="form-group">
+                        <label for="f_label">
+                            {#__ key="entity.e_role.f_label"/}&nbsp;
+                            {@inline_help field="f_label"}
+                            <i data-field="f_label" class="inline-help fa fa-info-circle" style="color: #1085EE;"></i>
+                            {/inline_help}
+                        </label>
+                        <input class="form-control input" placeholder='{#__ key="entity.e_role.f_label" /}' name="f_label" value="{f_label}" type="text" maxlength="255" readonly="">
+                    </div>
+                </div>
+            </div>
+            <div class="actions">
+                <form action="/role/delete" method="post">
+                    <div class="quicklinks">
+                        <a class="btn btn-default" href="javascript:history.back();">
+                            <i class="fa fa-arrow-left"></i>&nbsp;&nbsp;
+                            {#__ key="button.return"/}
+                        </a>
+                        {#actionAccess entity="role" action="delete"}
+                        <button class="btn btn-danger btn-confirm">
+                            <i class="fa fa-trash-o fa-md">&nbsp;&nbsp;</i>
+                            <span>
+                                {#__ key="button.delete"/}
+                            </span>
+                        </button>
+                        <input name="id" type="hidden" value="{e_role.id}" class="form-control">
+                        {/actionAccess}
+                        {#actionAccess entity="role" action="update"}
+                        <a href="/role/update_form?id={e_role.id}" class="btn btn-warning">
+                            <i class="fa fa-pencil fa-md">&nbsp;&nbsp;</i>
+                            <span>
+                                {#__ key="button.update"/}
+                            </span>
+                        </a>
+                        {/actionAccess}
+                        {^hideButton}
+                        {#actionAccess entity="role" action="create"}
+                        <a href="/role/create_form" class="btn btn-success">
+                            <i class="fa fa-plus fa-md">&nbsp;&nbsp;</i>
+                            <span>
+                                {#__ key="button.create"/}
+                            </span>
+                        </a>
+                        {/actionAccess}
+                        {#actionAccess entity="role" action="read"}
+                        <a href="/role/list" type="submit" class="btn btn-primary">
+                            <i class="fa fa-list fa-md">&nbsp;&nbsp;</i>
+                            <span>
+                                {#__ key="button.list"/}
+                            </span>
+                        </a>
+                        {/actionAccess}
+                        {/hideButton}
+                    </div>
+                </form>
+            </div>
+        </div>
+        {^hideTab}
+        {#entityAccess entity="user"}
+        <div id="r_user" class="ajax-tab tab-pane fade" data-tabtype="hasMany" data-asso-alias="r_user" data-asso-foreignkey="fk_id_role" data-asso-flag="{id}" data-asso-source="e_role" data-asso-url="role">
+            <div class="ajax-content sub-tab-table"></div>
+        </div>
+        {/entityAccess}
+        {/hideTab}
+    </div>
+</div>

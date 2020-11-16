@@ -1,0 +1,56 @@
+[
+    {
+        "target": "e_group",
+        "relation": "belongsToMany",
+        "foreignKey": "fk_id_e_status",
+        "as": "r_accepted_group",
+        "showAs": "Accepted group",
+        "through": "5_accepted_group",
+        "otherKey": "fk_id_e_group",
+        "structureType": "relatedToMultiple",
+        "usingField": [
+            {
+                "value": "f_label",
+                "type": "string"
+            }
+        ]
+    },
+    {
+        "target": "e_status",
+        "relation": "belongsTo",
+        "foreignKey": "fk_id_status_children",
+        "as": "r_status_children",
+        "structureType": "auto_generate"
+    },
+    {
+        "target": "e_translation",
+        "relation": "hasMany",
+        "foreignKey": "fk_id_status_translations",
+        "as": "r_translations",
+        "showAs": "Translations",
+        "structureType": "hasMany"
+    },
+    {
+        "target": "e_task",
+        "relation": "hasMany",
+        "foreignKey": "fk_id_status_state",
+        "as": "r_task",
+        "structureType": "auto_generate"
+    },
+    {
+        "target": "e_action",
+        "relation": "hasMany",
+        "foreignKey": "fk_id_status_actions",
+        "as": "r_actions",
+        "showAs": "Actions",
+        "structureType": "hasMany"
+    },
+    {
+        "relation": "belongsToMany",
+        "target": "e_status",
+        "through": "8_status_children",
+        "foreignKey": "fk_id_parent_status",
+        "otherKey": "fk_id_child_status",
+        "as": "r_children"
+    }
+]

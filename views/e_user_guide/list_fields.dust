@@ -1,0 +1,44 @@
+<table id="table_custom_data_entity" data-url="/custom_url_data_entity/datalist" class="dataTable table table-bordered table-striped animated fadeIn" style="display: none;">
+    <thead class="main">
+        <tr class="fields">
+            <th data-field="id" data-col="id">
+                {#__ key="entity.custom_data_entity.id_entity"/}&nbsp;
+                {#__ key="entity.custom_data_entity.label_entity"/}
+            </th>
+            <th data-field="f_file" data-col="f_file" data-type="file">
+                {#__ key="entity.e_user_guide.f_file"/}
+            </th>
+            {#actionAccess entity="custom_url_data_entity" action="read"}
+            <th></th>
+            {/actionAccess}
+            {#actionAccess entity="custom_url_data_entity" action="update"}
+            <th></th>
+            {/actionAccess}
+            {#actionAccess entity="custom_url_data_entity" action="delete"}
+            <th></th>
+            {/actionAccess}
+        </tr>
+    </thead>
+    <thead class="filters">
+        <tr class="fields">
+            <th data-field="id" data-col="id">
+                {#__ key="entity.custom_data_entity.id_entity"/}&nbsp;
+                {#__ key="entity.custom_data_entity.label_entity"/}
+            </th>
+            <th data-field="f_file" data-col="f_file" data-type="file">
+                {#__ key="entity.e_user_guide.f_file"/}
+            </th>
+            {#actionAccess entity="custom_url_data_entity" action="read"}
+            <th></th>
+            {/actionAccess}
+            {#actionAccess entity="custom_url_data_entity" action="update"}
+            <th></th>
+            {/actionAccess}
+            {#actionAccess entity="custom_url_data_entity" action="delete"}
+            <th></th>
+            {/actionAccess}
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>

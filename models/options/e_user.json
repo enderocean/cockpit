@@ -1,0 +1,46 @@
+[
+    {
+        "target": "e_role",
+        "relation": "belongsToMany",
+        "foreignKey": "fk_id_e_user",
+        "as": "r_role",
+        "showAs": "Role",
+        "through": "1_role",
+        "otherKey": "fk_id_e_role",
+        "structureType": "relatedToMultiple",
+        "usingField": [
+            {
+                "value": "f_label",
+                "type": "string"
+            }
+        ],
+        "allowNull": true
+    },
+    {
+        "target": "e_group",
+        "relation": "belongsToMany",
+        "foreignKey": "fk_id_e_user",
+        "as": "r_group",
+        "showAs": "Group",
+        "through": "2_group",
+        "otherKey": "fk_id_e_group",
+        "structureType": "relatedToMultiple",
+        "usingField": [
+            {
+                "value": "f_label",
+                "type": "string"
+            }
+        ],
+        "allowNull": true
+    },
+    {
+        "target": "e_notification",
+        "relation": "belongsToMany",
+        "foreignKey": "fk_id_e_user",
+        "as": "r_notification",
+        "showAs": "notification",
+        "through": "7_notification_user_user",
+        "otherKey": "fk_id_e_notification",
+        "structureType": "hasMany"
+    }
+]

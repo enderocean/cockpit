@@ -1,0 +1,80 @@
+<table id="table_e_media_mail" data-url="/media_mail/datalist" class="dataTable table table-bordered table-striped animated fadeIn" style="display: none;">
+    <thead class="main">
+        <tr class="fields">
+            <th data-field="id" data-col="id">
+                {#__ key="entity.e_media_mail.id_entity"/}&nbsp;
+                {#__ key="entity.e_media_mail.label_entity"/}
+            </th>
+            <th data-field="f_to" data-col="f_to" data-type="string">
+                {#__ key="entity.e_media_mail.f_to"/}
+            </th>
+            <th data-field="f_cc" data-col="f_cc" data-type="string">
+                {#__ key="entity.e_media_mail.f_cc"/}
+            </th>
+            <th data-field="f_cci" data-col="f_cci" data-type="string">
+                {#__ key="entity.e_media_mail.f_cci"/}
+            </th>
+            <th data-field="f_from" data-col="f_from" data-type="string">
+                {#__ key="entity.e_media_mail.f_from"/}
+            </th>
+            <th data-field="f_attachments" data-col="f_attachments" data-type="string">
+                {#__ key="entity.e_media_mail.f_attachments"/}
+            </th>
+            <th data-field="f_subject" data-col="f_subject" data-type="string">
+                {#__ key="entity.e_media_mail.f_subject"/}
+            </th>
+            <th data-field="f_content" data-col="f_content" data-type="text">
+                {#__ key="entity.e_media_mail.f_content"/}
+            </th>
+            {#actionAccess entity="media_mail" action="read"}
+            <th></th>
+            {/actionAccess}
+            {#actionAccess entity="media_mail" action="update"}
+            <th></th>
+            {/actionAccess}
+            {#actionAccess entity="media_mail" action="delete"}
+            <th></th>
+            {/actionAccess}
+        </tr>
+    </thead>
+    <thead class="filters">
+        <tr class="fields">
+            <th data-field="id" data-col="id">
+                {#__ key="entity.e_media_mail.id_entity"/}&nbsp;
+                {#__ key="entity.e_media_mail.label_entity"/}
+            </th>
+            <th data-field="f_to" data-col="f_to" data-type="string">
+                {#__ key="entity.e_media_mail.f_to"/}
+            </th>
+            <th data-field="f_cc" data-col="f_cc" data-type="string">
+                {#__ key="entity.e_media_mail.f_cc"/}
+            </th>
+            <th data-field="f_cci" data-col="f_cci" data-type="string">
+                {#__ key="entity.e_media_mail.f_cci"/}
+            </th>
+            <th data-field="f_from" data-col="f_from" data-type="string">
+                {#__ key="entity.e_media_mail.f_from"/}
+            </th>
+            <th data-field="f_attachments" data-col="f_attachments" data-type="string">
+                {#__ key="entity.e_media_mail.f_attachments"/}
+            </th>
+            <th data-field="f_subject" data-col="f_subject" data-type="string">
+                {#__ key="entity.e_media_mail.f_subject"/}
+            </th>
+            <th data-field="f_content" data-col="f_content" data-type="text">
+                {#__ key="entity.e_media_mail.f_content"/}
+            </th>
+            {#actionAccess entity="media_mail" action="read"}
+            <th></th>
+            {/actionAccess}
+            {#actionAccess entity="media_mail" action="update"}
+            <th></th>
+            {/actionAccess}
+            {#actionAccess entity="media_mail" action="delete"}
+            <th></th>
+            {/actionAccess}
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>

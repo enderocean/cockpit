@@ -1,0 +1,9 @@
+[
+    {
+        "target": "e_status",
+        "relation": "belongsTo",
+        "foreignKey": "fk_id_status_translations",
+        "as": "r_status_translations",
+        "structureType": "auto_generate"
+    }
+]

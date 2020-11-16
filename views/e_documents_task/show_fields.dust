@@ -1,0 +1,67 @@
+<div id="fields" class="row">
+    <div data-field="f_filename" class="fieldLineHeight col-xs-12">
+        <div class="form-group">
+            <label for="f_filename">
+                {#__ key="entity.e_documents_task.f_filename"/}&nbsp;
+                {@inline_help field="f_filename"}
+                <i data-field="f_filename" class="inline-help fa fa-info-circle" style="color: #1085EE;"></i>
+                {/inline_help}
+            </label>
+            <div class="input-group">
+                {?f_filename}
+                <div class="input-group-addon">
+                    <i class="fa fa-download"></i>
+                </div>
+                <input data-entity="e_documents_task" data-filename="{f_filename}" class="form-control text-left preview_file" name="f_filename" value="{f_filename|filename}">
+                {:else}
+                {#__ key="message.empty_file" /}
+                {/f_filename}
+            </div>
+        </div>
+    </div>
+</div>
+<div class="actions">
+    <form action="/documents_task/delete" method="post">
+        <div class="quicklinks">
+            <a class="btn btn-default" href="javascript:history.back();">
+                <i class="fa fa-arrow-left"></i>&nbsp;&nbsp;
+                {#__ key="button.return"/}
+            </a>
+            {#actionAccess entity="documents_task" action="delete"}
+            <button class="btn btn-danger btn-confirm">
+                <i class="fa fa-trash-o fa-md">&nbsp;&nbsp;</i>
+                <span>
+                    {#__ key="button.delete"/}
+                </span>
+            </button>
+            <input name="id" type="hidden" value="{e_documents_task.id}" class="form-control">
+            {/actionAccess}
+            {#actionAccess entity="documents_task" action="update"}
+            <a href="/documents_task/update_form?id={e_documents_task.id}" class="btn btn-warning">
+                <i class="fa fa-pencil fa-md">&nbsp;&nbsp;</i>
+                <span>
+                    {#__ key="button.update"/}
+                </span>
+            </a>
+            {/actionAccess}
+            {^hideButton}
+            {#actionAccess entity="documents_task" action="create"}
+            <a href="/documents_task/create_form" class="btn btn-success">
+                <i class="fa fa-plus fa-md">&nbsp;&nbsp;</i>
+                <span>
+                    {#__ key="button.create"/}
+                </span>
+            </a>
+            {/actionAccess}
+            {#actionAccess entity="documents_task" action="read"}
+            <a href="/documents_task/list" type="submit" class="btn btn-primary">
+                <i class="fa fa-list fa-md">&nbsp;&nbsp;</i>
+                <span>
+                    {#__ key="button.list"/}
+                </span>
+            </a>
+            {/actionAccess}
+            {/hideButton}
+        </div>
+    </form>
+</div>

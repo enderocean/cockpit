@@ -1,0 +1,55 @@
+{>"layout_m_administration"/}
+{<header}
+<h1>
+    {#__ key="module.m_administration"/}
+    <small>
+        {#__ key="module.module"/}</small>
+</h1>
+<ol class="breadcrumb">
+    <li>
+        <a href="/">
+            <i class="fa fa-home"></i>
+            {#__ key="module.home"/}
+        </a>
+    </li>
+    <li class="active">
+        {#__ key="module.m_administration"/}
+    </li>
+</ol>
+{/header}
+
+{<content}
+<div id="widgets" class="row">
+    {#entityAccess entity="user" }
+    <div id="stats_e_user_widget" data-entity="e_user" data-widget-type="stats" class="ajax-widget col-sm-3 col-xs-12">
+        <div class="small-box bg-aqua">
+            <div class="inner">
+                <h3>{e_user_stats}</h3>
+                <p>
+                    {#__ key="entity.e_user.label_entity" /}
+                </p>
+            </div>
+            <div class="icon">
+                <i class="fa fa-user user-icon"></i>
+            </div>
+            <a href="/user/list" class="small-box-footer">
+                {#__ key="defaults.widgets.stats.more_info" /}&nbsp; <i class="fa fa-arrow-circle-right"></i>
+            </a>
+        </div>
+    </div>
+    {/entityAccess}
+</div>
+{/content}
+
+{<custom_js}
+<script src="/js/plugins/datatables/jquery.dataTables.min.js" type="text/javascript"></script>
+<script src="/js/plugins/datatables/dataTables.bootstrap.js" type="text/javascript"></script>
+<script src="/js/plugins/chart/chartjs.bundle.min.js" type="text/javascript"></script>
+<script src="/js/plugins/palettes/palettes.js" type="text/javascript"></script>
+<script type="text/javascript" src="/js/Newmips/widgets.js"></script>
+<script type="text/javascript">
+    $(function() {
+        initWidgets();
+    });
+</script>
+{/custom_js}

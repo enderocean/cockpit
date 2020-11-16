@@ -1,0 +1,13 @@
+{
+	"watering_can": {
+		"type": "bottle",
+		"objects": ["Packaged goods","Bottle"],
+		"labels": ["Bottle"],
+		"keywords": [
+			"Ring",
+			"Chat",
+			"Talk",
+			"Share"
+		]
+	}
+}

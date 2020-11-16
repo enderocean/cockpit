@@ -1,0 +1,9 @@
+[
+    {
+        "target": "e_media",
+        "relation": "hasMany",
+        "foreignKey": "fk_id_media_task",
+        "as": "r_media",
+        "structureType": "auto_generate"
+    }
+]

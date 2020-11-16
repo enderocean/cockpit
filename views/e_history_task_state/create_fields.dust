@@ -1,0 +1,36 @@
+<div id="fields" class="row">
+    <div data-field="f_state" class="fieldLineHeight col-xs-12">
+        <div class="form-group">
+            <label for="r_state">
+                {#__ key="entity.e_6_history_s_state.r_state" /}&nbsp;
+                {@inline_help field="r_state"}
+                <i data-field="r_state" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+            <select class="ajax form-control" name="r_state" data-source="status" data-using="f_name" width="100%"></select>
+        </div>
+    </div>
+    <div data-field="f_comment" class="fieldLineHeight col-xs-12">
+        <div class="form-group">
+            <label for="f_comment">
+                {#__ key="entity.e_6_history_s_state.f_comment"/}&nbsp;
+                {@inline_help field="f_comment"}
+                <i data-field="f_comment" class="inline-help fa fa-info-circle" style="color: #1085EE;"></i>
+                {/inline_help}
+            </label>
+            <textarea class="form-control textarea" placeholder='{#__ key="entity.e_6_history_s_state.f_comment" /}' name="f_comment" id="f_comment_textareaid" type="text"></textarea>
+        </div>
+    </div>
+
+    <div data-field="f_modified_by" class="fieldLineHeight col-xs-12">
+        <div class="form-group">
+            <label for="r_modified_by">
+                {#__ key="entity.e_6_history_s_state.r_modified_by" /}&nbsp;
+                {@inline_help field="r_modified_by"}
+                <i data-field="r_modified_by" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+            <select class="ajax form-control" name="r_modified_by" data-source="user" data-using="f_login" width="100%"></select>
+        </div>
+    </div>
+</div>

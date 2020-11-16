@@ -1,0 +1,113 @@
+{
+    "e_robot": {
+        "f_current_status": [
+            {
+                "value": "connected",
+                "translations": {
+                    "fr-FR": "CONNECTÉ",
+                    "en-EN": "CONNECTED"
+                }
+            },
+            {
+                "value": "disconnected",
+                "translations": {
+                    "fr-FR": "DÉCONNECTÉ",
+                    "en-EN": "DISCONNECTED"
+                }
+            },
+            {
+                "value": "working",
+                "translations": {
+                    "fr-FR": "EN COURS",
+                    "en-EN": "WORKING"
+                }
+            }
+        ]
+    },
+    "e_task": {
+        "f_type": [
+            {
+                "value": "manual",
+                "translations": {
+                    "fr-FR": "Manuelle",
+                    "en-EN": "Manual"
+                }
+            },
+            {
+                "value": "automatic",
+                "translations": {
+                    "fr-FR": "Automatique",
+                    "en-EN": "Automatic"
+                }
+            }
+        ]
+    },
+    "e_media": {
+        "f_type": [
+            {
+                "value": "mail",
+                "translations": {
+                    "fr-FR": "Mail",
+                    "en-EN": "Mail"
+                }
+            },
+            {
+                "value": "notification",
+                "translations": {
+                    "fr-FR": "Notification",
+                    "en-EN": "Notification"
+                }
+            },
+            {
+                "value": "sms",
+                "translations": {
+                    "fr-FR": "SMS",
+                    "en-EN": "SMS"
+                }
+            },
+            {
+                "value": "task",
+                "translations": {
+                    "fr-FR": "Tâche",
+                    "en-EN": "Task"
+                }
+            }
+        ]
+    },
+    "e_media_task": {
+        "f_task_type": [
+            {
+                "value": "manual",
+                "translations": {
+                    "fr-FR": "Manuelle",
+                    "en-EN": "Manual"
+                }
+            },
+            {
+                "value": "automatic",
+                "translations": {
+                    "fr-FR": "Automatique",
+                    "en-EN": "Automatic"
+                }
+            }
+        ]
+    },
+    "e_action": {
+        "f_execution": [
+            {
+                "value": "immediate",
+                "translations": {
+                    "fr-FR": "Immédiate",
+                    "en-EN": "Immédiate"
+                }
+            },
+            {
+                "value": "differee",
+                "translations": {
+                    "fr-FR": "Différée",
+                    "en-EN": "Différée"
+                }
+            }
+        ]
+    }
+}

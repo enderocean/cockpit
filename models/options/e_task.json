@@ -1,0 +1,47 @@
+[
+    {
+        "target": "e_history_task_state",
+        "relation": "hasMany",
+        "foreignKey": "fk_id_task_history_state",
+        "as": "r_history_state",
+        "showAs": "History State",
+        "structureType": "hasMany"
+    },
+    {
+        "target": "e_status",
+        "relation": "belongsTo",
+        "foreignKey": "fk_id_status_state",
+        "as": "r_state",
+        "showAs": "State",
+        "structureType": "relatedTo",
+        "usingField": [
+            {
+                "value": "f_name",
+                "type": "string"
+            }
+        ]
+    },
+    {
+        "target": "e_robot",
+        "relation": "belongsTo",
+        "foreignKey": "fk_id_robot_robot",
+        "as": "r_robot",
+        "showAs": "Robot",
+        "structureType": "relatedTo",
+        "usingField": [
+            {
+                "value": "f_name",
+                "type": "string"
+            }
+        ]
+    },
+    {
+        "target": "e_documents_task",
+        "relation": "hasMany",
+        "foreignKey": "fk_id_task",
+        "as": "r_documents_task",
+        "showAs": "Documents Task",
+        "structureType": "hasMany",
+        "isFileStorage": true
+    }
+]

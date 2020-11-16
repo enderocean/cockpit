@@ -1,0 +1,24 @@
+<div id="fields" class="row">
+    <div data-field="f_language" class="fieldLineHeight col-xs-12">
+        <div class="form-group">
+            <label for="f_language">
+                {#__ key="entity.e_translation.f_language"/}&nbsp;
+                {@inline_help field="f_language"}
+                <i data-field="f_language" class="inline-help fa fa-info-circle" style="color: #1085EE;"></i>
+                {/inline_help}
+            </label>
+            <input class="form-control input" placeholder='{#__ key="entity.e_translation.f_language" /}' name="f_language" value="{f_language}" type="text" maxlength="255">
+        </div>
+    </div>
+    <div data-field="f_value" class="fieldLineHeight col-xs-12">
+        <div class="form-group">
+            <label for="f_value">
+                {#__ key="entity.e_translation.f_value"/}&nbsp;
+                {@inline_help field="f_value"}
+                <i data-field="f_value" class="inline-help fa fa-info-circle" style="color: #1085EE;"></i>
+                {/inline_help}
+            </label>
+            <input class="form-control input" placeholder='{#__ key="entity.e_translation.f_value" /}' name="f_value" value="{f_value}" type="text" maxlength="255">
+        </div>
+    </div>
+</div>

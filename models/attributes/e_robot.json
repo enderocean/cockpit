@@ -1,0 +1,43 @@
+{
+    "id": {
+        "type": "INTEGER",
+        "autoIncrement": true,
+        "primaryKey": true
+    },
+    "version": {
+        "type": "INTEGER",
+        "defaultValue": 1
+    },
+    "createdBy": {
+        "type": "STRING",
+        "defaultValue": null,
+        "validate": false
+    },
+    "updatedBy": {
+        "type": "STRING",
+        "defaultValue": null,
+        "validate": false
+    },
+    "f_current_status": {
+        "type": "ENUM",
+        "values": [
+            "connected",
+            "disconnected",
+            "working"
+        ],
+        "newmipsType": "enum",
+        "defaultValue": null,
+        "validate": true
+    },
+    "f_name": {
+        "type": "STRING",
+        "newmipsType": "string",
+        "defaultValue": null,
+        "validate": true
+    },
+    "f_comment": {
+        "type": "TEXT",
+        "newmipsType": "regular text",
+        "validate": true
+    }
+}

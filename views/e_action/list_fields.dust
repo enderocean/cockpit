@@ -1,0 +1,58 @@
+<table id="table_e_action" data-url="/action/datalist" class="dataTable table table-bordered table-striped animated fadeIn" style="display: none;">
+    <thead class="main">
+        <tr class="fields">
+            <th data-field="id" data-col="id">
+                {#__ key="entity.e_action.id_entity"/}&nbsp;
+                {#__ key="entity.e_action.label_entity"/}
+            </th>
+            <th data-field="r_media" data-col="r_media.f_name" data-type="string">
+                {#__ key="entity.e_action.r_media"/}&nbsp;-&nbsp;
+                {#__ key="entity.e_media.f_name"/}
+            </th>
+            <th data-field="f_order" data-col="f_order" data-type="integer">
+                {#__ key="entity.e_action.f_order"/}
+            </th>
+            <th data-field="f_execution" data-col="f_execution" data-type="enum">
+                {#__ key="entity.e_action.f_execution"/}
+            </th>
+            {#actionAccess entity="action" action="read"}
+            <th></th>
+            {/actionAccess}
+            {#actionAccess entity="action" action="update"}
+            <th></th>
+            {/actionAccess}
+            {#actionAccess entity="action" action="delete"}
+            <th></th>
+            {/actionAccess}
+        </tr>
+    </thead>
+    <thead class="filters">
+        <tr class="fields">
+            <th data-field="id" data-col="id">
+                {#__ key="entity.e_action.id_entity"/}&nbsp;
+                {#__ key="entity.e_action.label_entity"/}
+            </th>
+            <th data-field="r_media" data-col="r_media.f_name" data-type="string">
+                {#__ key="entity.e_action.r_media"/}&nbsp;-&nbsp;
+                {#__ key="entity.e_media.f_name"/}
+            </th>
+            <th data-field="f_order" data-col="f_order" data-type="integer">
+                {#__ key="entity.e_action.f_order"/}
+            </th>
+            <th data-field="f_execution" data-col="f_execution" data-type="enum">
+                {#__ key="entity.e_action.f_execution"/}
+            </th>
+            {#actionAccess entity="action" action="read"}
+            <th></th>
+            {/actionAccess}
+            {#actionAccess entity="action" action="update"}
+            <th></th>
+            {/actionAccess}
+            {#actionAccess entity="action" action="delete"}
+            <th></th>
+            {/actionAccess}
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>

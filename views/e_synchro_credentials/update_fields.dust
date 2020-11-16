@@ -1,0 +1,40 @@
+<div id="fields" class="row">
+    <div data-field="f_cloud_host" class="fieldLineHeight col-xs-12">
+        <div class="form-group">
+            <label for="f_cloud_host">
+                {#__ key="entity.e_synchro_credentials.f_cloud_host"/}&nbsp;
+                {@inline_help field="f_cloud_host"}
+                <i data-field="f_cloud_host" class="inline-help fa fa-info-circle" style="color: #1085EE;"></i>
+                {/inline_help}
+            </label>
+            <div class="input-group">
+                <div class="input-group-addon">
+                    <i class="fa fa-link"></i>
+                </div>
+                <input class="form-control input" placeholder='{#__ key="entity.e_synchro_credentials.f_cloud_host" /}' name="f_cloud_host" value="{f_cloud_host}" type="url" data-type="url">
+            </div>
+        </div>
+    </div>
+    <div data-field="f_client_key" class="fieldLineHeight col-xs-12">
+        <div class="form-group">
+            <label for="f_client_key">
+                {#__ key="entity.e_synchro_credentials.f_client_key"/}&nbsp;
+                {@inline_help field="f_client_key"}
+                <i data-field="f_client_key" class="inline-help fa fa-info-circle" style="color: #1085EE;"></i>
+                {/inline_help}
+            </label>
+            <input class="form-control input" placeholder='{#__ key="entity.e_synchro_credentials.f_client_key" /}' name="f_client_key" value="{f_client_key}" type="text" maxlength="255">
+        </div>
+    </div>
+    <div data-field="f_client_secret" class="fieldLineHeight col-xs-12">
+        <div class="form-group">
+            <label for="f_client_secret">
+                {#__ key="entity.e_synchro_credentials.f_client_secret"/}&nbsp;
+                {@inline_help field="f_client_secret"}
+                <i data-field="f_client_secret" class="inline-help fa fa-info-circle" style="color: #1085EE;"></i>
+                {/inline_help}
+            </label>
+            <input class="form-control input" placeholder='{#__ key="entity.e_synchro_credentials.f_client_secret" /}' name="f_client_secret" value="{f_client_secret}" type="text" maxlength="255">
+        </div>
+    </div>
+</div>

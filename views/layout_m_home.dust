@@ -1,0 +1,26 @@
+{>"main_layout"/}
+
+{<custom_css}
+{! Admin LTE Layout !}
+<link href="/css/AdminLteV2/layouts/layout-default.css" rel="stylesheet" type="text/css" data-type="layout" data-layout="default">
+{+custom_css_2 /}
+{/custom_css}
+
+{<modules}
+<select id="dynamic_select" data-width="100%" class="form-control select" onchange="navigate()">
+    {#moduleAccess module="home"}
+    <option data-module="m_home" value="/default/home" selected="">
+        {#__ key="module.m_home" /}
+    </option>
+    {/moduleAccess}
+    {#moduleAccess module="administration"}
+    <option data-module="m_administration" value="/default/administration">
+        {#__ key="module.m_administration" /}
+    </option>
+    {/moduleAccess}
+</select>
+{/modules}
+
+{<sidebar}
+<ul id="sortable" class="sidebar-menu" style="white-space: pre-wrap;"></ul>
+{/sidebar}

@@ -1,0 +1,592 @@
+{
+    "app": {
+        "name": "Cockpit"
+    },
+    "home": {
+        "configuration": "Configuration",
+        "back": "Back",
+        "fullscreen": "<u>F</u>ullscreen",
+        "target": "<u>T</u>arget",
+        "capture": "<u>C</u>apture",
+        "visualize": "<u>V</u>isualize",
+        "keyboard_controller": "Keyboard Controller",
+        "gamepad_controller": "Gamepad Controller",
+        "keyboard_mapping": "Mapping keyboard",
+        "gamepad_mapping": "Mapping buttons",
+        "console": "Console",
+        "local_time": "Local time",
+        "plug_gamepad": "Plug your gamepad to take control...",
+        "gamepad_connected": "Gamepad connected !",
+        "move": "Move",
+        "switch_on": "Switch On",
+        "switch_off": "Switch Off",
+        "go_forward": "Forward",
+        "go_back": "Backward",
+        "move_lateral_left": "Move lateral left",
+        "move_lateral_right": "Move lateral right",
+        "go_up": "Go to surface",
+        "go_down": "Go deeper",
+        "turn_left": "Turn left",
+        "turn_right": "Turn right",
+        "stabilize": "Stabilize",
+        "position_hold": "Position hold",
+        "manual_mode": "Manual mode",
+        "depth_hold": "Depth hold",
+        "increase_speed": "Decrease speed",
+        "decrease_speed": "Increase speed",
+        "execute_actions": "Execute actions",
+        "decrease_lights": "Decrease lights",
+        "increase_lights": "Increase lights",
+        "mount_camera_down": "Mount camera down",
+        "mount_camera_up": "Mount camera up",
+        "open_gripper": "Open gripper",
+        "close_gripper": "Close gripper",
+        "buttons": "Buttons",
+        "joystick_1": "Joystick 1",
+        "joystick_2": "Joystick 2",
+        "digital_pad": "Digital Pad",
+        "gamepad": "Gamepad",
+        "keyboard": "Keyboard",
+        "orientation": "Orientation",
+        "profondeur": "Depth",
+        "battery": "Battery",
+        "mode": "Mode",
+        "radio_stabilize": "Stabilize",
+        "radio_manual_mode": "Manual mode",
+        "radio_poshold": "Position hold",
+        "radio_depth_hold": "Depth hold"
+    },
+    "notification": {
+        "deleteAll": "Delete all notifications",
+        "icon": {
+            "choose": "Choose icon"
+        }
+    },
+    "login": {
+        "log_in": "Log in",
+        "reset_password": {
+            "title": "Forgotten password",
+            "success": "Your password has successfully been reset. Please do the first connection process in order to set your new password.",
+            "successMail": "An email allowing you to reset your password has been sent to you.",
+            "userNotExist": "The user corresponding to the information entered could not be found.",
+            "cannotFindToken": "Error, can not find your reset token."
+        },
+        "first_connection": {
+            "title": "First connection",
+            "success": "Update done, you can now log in with your credentials.",
+            "success_login": "Update done, you are now log in !",
+            "userNotExist": "This user does not exist or has already been activated.",
+            "alreadyHavePassword": "Operation is not possible, this user already has a password.",
+            "passwordNotValid": "The password is not valid, please try again.",
+            "help": {
+                "password_title": "Password - First connection",
+                "password_content": "<p>Please choose your password, it must respect the following format:<br><br> - 8 characters minimum<br> - At least 1 digit<br> - At least 1 capital letter<br> - At least 1 special character (!@#$%^&*)<br></i><br></p>"
+            }
+        },
+        "authentication": "Connection",
+        "login": "Login",
+        "password": "Password",
+        "confirm_password": "Confirm password",
+        "email": "Email",
+        "remember_me": "Remember me",
+        "submit": "Submit",
+        "missing_infos": "Please fill all the input.",
+        "login_fail": "The login and / or password is not correct, please try again.",
+        "not_enabled": "Your account does not seem to be activated, please complete the first connection process.",
+        "logout_sucess": "You have been successfully logged out.",
+        "wrong_captcha": "The captcha entered is not correct, please try again."
+    },
+    "settings": {
+        "title": "Access managment",
+        "tool_menu": "Access configuration file",
+        "tool_success": "The access configuration file has been imported.",
+        "tool_title": "Import / Export access configuration",
+        "tool_export": "Export access configuration",
+        "tool_import": "Import access configuration",
+        "import_file_name": "access.json file:",
+        "tool_warning": "Warning, the file has to be the same structure of the current access.json file !",
+        "auth_component": {
+            "access_managment": "Access managment per group",
+            "action_managment": "Action managment per role",
+            "moduleList": "Modules",
+            "entityList": "Entities",
+            "grouplist": "Groups:",
+            "rolelist": "Roles:",
+            "entitylist": "Entities:",
+            "group": "Group",
+            "role": "Role",
+            "api_status": "API Status",
+            "api_doc": "API Documentation",
+            "action": {
+                "read": "Show",
+                "create": "Create",
+                "update": "Update",
+                "delete": "Delete"
+            },
+            "no_access_group_module": "Your group do not have access to this module.",
+            "no_access_group_entity": "Your group do not have access to this entity.",
+            "no_access_change_status": "Your group do not have access to change this status.",
+            "no_access_role": "Your role is not allowed to do this action on this entity.",
+            "no_group": "Your account does not have access to the application, please contact the administrator."
+        },
+        "db_tool": {
+            "title": "DB Tool",
+            "export_title": "Export",
+            "import_title": "Import",
+            "all_db": "All the database",
+            "export_action": "Export",
+            "import_action": "Import",
+            "import_file": "SQL File",
+            "import_success": "The import has been successfully completed.",
+            "import_error": "An error has occurred, please check the logs.",
+            "file_needed": "Missing import file.",
+            "wrong_db_pwd": "Wrong password.",
+            "modal_password_title": "Password confirmation",
+            "modal_password_content": "Please confirm the database password:",
+            "wrong_dialect": "Sorry, DB tools only work with MySQL for now.",
+            "no_choice": "Please choose what you want to export."
+        },
+        "import_export": {
+            "title": "Import / Export"
+        },
+        "legend": "Change your user settings",
+        "lang": "Language",
+        "login": "Login",
+        "email": "Email",
+        "firstname": "Firstname",
+        "lastname": "Lastname",
+        "phone": "Phone",
+        "title_change_password": "Reset password procedure",
+        "old_password": "Your old password",
+        "new_password_1": "New password",
+        "new_password_2": "Confirm new password",
+        "error1": "You have to fill a new password in order to change it.",
+        "error2": "The two passwords do not match.",
+        "error3": "Your new password must be at least 4 characters long.",
+        "error4": "Your old password is not valid.",
+        "success": "Your profile has been updated."
+    },
+    "navbar": {
+        "about": "About",
+        "help": "Help",
+        "support": "Support"
+    },
+    "select": {
+        "default": "-- Choose --"
+    },
+    "module": {
+        "home": "Home",
+        "module": "Module",
+        "administration": "Administration",
+        "workspace": "My workspace",
+        "m_home": "Home",
+        "m_administration": "Administration"
+    },
+    "role": {
+        "administrator": "Administrator",
+        "developer": "Developer"
+    },
+    "button": {
+        "profile": "Profile",
+        "disconnect": "Disconnect",
+        "show": "Show",
+        "update": "Modify",
+        "delete": "Delete",
+        "create": "Create",
+        "list": "List",
+        "add": "Add",
+        "remove": "Remove",
+        "save": "Save",
+        "preview": "Preview",
+        "record": "Record",
+        "execute": "Execute",
+        "settings": "Settings",
+        "download": "Download",
+        "search": "Search",
+        "send": "Send",
+        "validation": "Validate",
+        "previous": "Previous",
+        "next": "Next",
+        "close": "Close",
+        "generate": "Generate",
+        "help": "Help",
+        "cancel": "Cancel",
+        "return": "Return",
+        "delete_confirm": "Are you sure you want to delete this record?",
+        "loading": "Loading...",
+        "back": "Back"
+    },
+    "operation": {
+        "show": "Show",
+        "update": "Modify",
+        "create": "Create",
+        "delete": "Delete",
+        "list": "List",
+        "add": "Add"
+    },
+    "message": {
+        "create": {
+            "success": "Success ! Data registered with success.",
+            "failure": "Error ! No data registered. May ask to your administrator."
+        },
+        "update": {
+            "success": "Success ! Data modified with success.",
+            "failure": "Error ! No data modified. May ask to your administrator."
+        },
+        "delete": {
+            "success": "Success ! Data deleted with success.",
+            "failure": "Error ! No data deleted. May ask to your administrator.",
+            "question": "Are you sure you want to delete this entity ?"
+        },
+        "empty": "No data to display",
+        "empty_file": "No file",
+        "unique": "This field must be unique:",
+        "relatedtomanycheckbox_required": "A field requires you to check at least one checkbox."
+    },
+    "entity": {
+        "e_user": {
+            "label_entity": "User",
+            "plural_entity": "User",
+            "id_entity": "ID",
+            "f_login": "Login",
+            "f_password": "password",
+            "f_email": "Email",
+            "f_token_password_reset": "token_password_reset",
+            "f_enabled": "enabled",
+            "r_role": "Role",
+            "r_group": "Group",
+            "r_notification": "notification"
+        },
+        "e_role": {
+            "label_entity": "Role",
+            "plural_entity": "Role",
+            "id_entity": "ID",
+            "f_label": "Label",
+            "r_user": "User"
+        },
+        "e_group": {
+            "label_entity": "Group",
+            "plural_entity": "Group",
+            "id_entity": "ID",
+            "f_label": "Label",
+            "r_user": "User"
+        },
+        "e_api_credentials": {
+            "label_entity": "API credentials",
+            "plural_entity": "API credentials",
+            "id_entity": "ID",
+            "f_client_name": "Client Name",
+            "f_client_key": "Client Key",
+            "f_client_secret": "Client Secret",
+            "r_role": "Role",
+            "r_group": "Group",
+            "f_token": "Token",
+            "f_token_timeout_tmsp": "Token timeout TMSP"
+        },
+        "e_synchronization": {
+            "label_entity": "Synchronization",
+            "plural_entity": "Synchronization",
+            "id_entity": "ID",
+            "r_api_credentials": "API credentials",
+            "f_journal_backup_file": "Journal backup file"
+        },
+        "e_synchro_credentials": {
+            "label_entity": "Synchro credentials",
+            "plural_entity": "Synchro credentials",
+            "id_entity": "ID",
+            "f_cloud_host": "Cloud host",
+            "f_client_key": "Client key",
+            "f_client_secret": "Client secret"
+        },
+        "e_status": {
+            "label_entity": "Status",
+            "plural_entity": "Status",
+            "id_entity": "ID",
+            "f_entity": "Entity",
+            "f_field": "Field",
+            "f_name": "Name",
+            "f_color": "Color",
+            "r_accepted_group": "Accepted group (No group means accepted for all)",
+            "f_button_label": "Button label",
+            "f_position": "Position",
+            "f_default": "Is the default status",
+            "f_comment": "Comment",
+            "r_children": "Children",
+            "r_translations": "Translations",
+            "r_6_history_s_state": "6_history_s_state",
+            "r_actions": "Actions",
+            "as_r_children": "Next status",
+            "apply_default": "Apply this status to entities without status",
+            "modal_title": "Comment"
+        },
+        "e_translation": {
+            "label_entity": "Translation",
+            "plural_entity": "Translation",
+            "id_entity": "ID",
+            "f_language": "Language",
+            "f_value": "Value",
+            "as_r_translations": "Traductions"
+        },
+        "e_robot": {
+            "label_entity": "Robot",
+            "plural_entity": "Robot",
+            "id_entity": "ID",
+            "f_current_status": "Current status",
+            "f_name": "Name",
+            "r_api_credentials": "Api credentials",
+            "f_comment": "Comment"
+        },
+        "e_task": {
+            "label_entity": "Task",
+            "plural_entity": "Task",
+            "id_entity": "ID",
+            "r_history_state": "History State",
+            "r_state": "State",
+            "s_state": "State",
+            "f_title": "Title",
+            "f_type": "Type",
+            "f_planned_date": "Planned date",
+            "f_execution_start_date": "Execution start date",
+            "f_execution_finish_date": "Execution finish date",
+            "f_duration": "Duration",
+            "f_data_flow": "Data flow",
+            "r_robot": "Robot",
+            "f_program_file": "Program file",
+            "f_procedure": "Procedure",
+            "r_documents_task": "Documents Task"
+        },
+        "e_history_task_state": {
+            "label_entity": "History task state",
+            "plural_entity": "6_history_s_state",
+            "id_entity": "ID",
+            "r_state": "State",
+            "f_comment": "Comment",
+            "r_modified_by": "Modified by",
+            "as_r_history_task_state": "History task state"
+        },
+        "e_documents_task": {
+            "label_entity": "Documents Task",
+            "plural_entity": "Documents Task",
+            "id_entity": "ID",
+            "f_filename": "File"
+        },
+        "e_media": {
+            "label_entity": "Media",
+            "plural_entity": "Media",
+            "id_entity": "ID",
+            "f_type": "Type",
+            "f_name": "Name",
+            "f_target_entity": "Target entity",
+            "r_media_mail": "Media Mail",
+            "r_media_notification": "Media Notification",
+            "r_media_sms": "Media SMS",
+            "r_media_task": "Media Task"
+        },
+        "e_media_mail": {
+            "label_entity": "Media Mail",
+            "plural_entity": "Media Mail",
+            "id_entity": "ID",
+            "f_to": "To",
+            "f_cc": "Cc",
+            "f_cci": "Cci",
+            "f_from": "From",
+            "f_attachments": "Attachments",
+            "f_subject": "Subject",
+            "f_content": "Content"
+        },
+        "e_media_notification": {
+            "label_entity": "Media Notification",
+            "plural_entity": "Media Notification",
+            "id_entity": "ID",
+            "f_title": "Title",
+            "f_description": "Description",
+            "f_icon": "Icon",
+            "f_color": "Color",
+            "f_targets": "targets"
+        },
+        "e_media_sms": {
+            "label_entity": "Media SMS",
+            "plural_entity": "Media SMS",
+            "id_entity": "ID",
+            "f_message": "Message",
+            "f_phone_numbers": "Phone numbers"
+        },
+        "e_media_task": {
+            "label_entity": "Media Task",
+            "plural_entity": "Media Task",
+            "id_entity": "ID",
+            "f_task_name": "Task name",
+            "f_task_type": "Task type",
+            "f_assignment_logic": "Assignment logic",
+            "f_program_file": "Program file",
+            "f_data_flow": "Data flow"
+        },
+        "e_action": {
+            "label_entity": "Action",
+            "plural_entity": "Action",
+            "id_entity": "ID",
+            "r_media": "Media",
+            "f_order": "Order",
+            "f_execution": "Execution"
+        },
+        "e_notification": {
+            "label_entity": "Notification",
+            "plural_entity": "Notification",
+            "id_entity": "ID",
+            "f_title": "Title",
+            "f_description": "Description",
+            "f_url": "URL",
+            "f_color": "Color",
+            "f_icon": "Icon",
+            "r_user": "user"
+        },
+        "e_inline_help": {
+            "label_entity": "Inline Help",
+            "plural_entity": "Inline Help",
+            "id_entity": "ID",
+            "f_entity": "Entity",
+            "f_field": "Field",
+            "f_content": "Content"
+        },
+        "e_user_guide": {
+            "label_entity": "User Guide",
+            "plural_entity": "User Guide",
+            "id_entity": "ID",
+            "f_file": "File"
+        }
+    },
+    "synchro": {
+        "title": "Synchronisation",
+        "config": {
+            "title": "Configuration"
+        },
+        "process": {
+            "title": "Synchronisation",
+            "synchronize": "Synchronise",
+            "dumped": "Data dump generated",
+            "no_credentials": "No synchro credentials found",
+            "connection_failed": "Impossible to connect with API."
+        }
+    },
+    "global_component": {
+        "local_file_storage": {
+            "filename": "Filename",
+            "wait_upload": "Uploading... Please wait.",
+            "required_file": "Some file / image upload fields are required, please fill them."
+        },
+        "contact_form": {
+            "firstname": "Firstname",
+            "lastname": "Lastname",
+            "email": "Email",
+            "title": "Title",
+            "content": "Content"
+        },
+        "agenda": {
+            "menu": "Agenda",
+            "add_event": "Add new event",
+            "no_category": "No category",
+            "pending_event": "Pending event(s)",
+            "startHour": "Start hour",
+            "endHour": "End hour",
+            "fill_title": "Please fill the title event input.",
+            "start_date": "Please fill the start date before.",
+            "start_after_end": "The start date is after the end date, please fix it.",
+            "end_before_start": "The end date is before the start date, please fix it."
+        },
+        "document_template": {
+            "template_example_dust": "Dust template example"
+        },
+        "status": {
+            "diagram": "Diagram"
+        }
+    },
+    "component": {
+        "c_db_tool": {
+            "label_component": "DB Tool"
+        },
+        "c_access_tool": {
+            "label_component": "Access file"
+        },
+        "c_import_export": {
+            "label_component": "Import / Export"
+        },
+        "c_access_settings_role": {
+            "label_component": "Role access"
+        },
+        "c_access_settings_group": {
+            "label_component": "Group access"
+        },
+        "c_access_settings_api": {
+            "label_component": "API access"
+        },
+        "c_address_settings": {
+            "label_component": "Address settings"
+        },
+        "status": {
+            "error": {
+                "illegal_status": "This status is not valid.",
+                "action_error": "One or more actions couldn't be executed. Verify that notifications are enabled or that you have a correct mail configuration."
+            },
+            "diagram": "Diagram",
+            "diagram_description": "Drag statuses below to the diagram on the right. Drop a status on top of another to append it.",
+            "select_status": "Select a status",
+            "next_status": "Next status",
+            "available_status": "Available status",
+            "children": "Next statuses",
+            "insert_variable": "Insert variable...",
+            "choose_from_user": "Choose a user",
+            "choose_from_group": "Choose a group",
+            "choose_from_field": "Choose a field",
+            "choose_from_phone_field": "Choose a field with type email",
+            "choose_from_file_field": "Choose a field with type file",
+            "choose_user_target": "Choose field related to user",
+            "notification_targets": "Notification targets",
+            "no_status_field": "There is no entity with a status component. Pease select an entity, create a status component and this page will allow you to configure it.",
+            "tip_1": "Tip: You can double click on a status to be redirect to its children."
+        }
+    },
+    "defaults": {
+        "widgets": {
+            "lastrecords": {
+                "label": "Last records"
+            },
+            "stats": {
+                "more_info": "More info"
+            },
+            "piechart": {
+                "distribution": "Distribution"
+            }
+        },
+        "createdAt": "Created at"
+    },
+    "error": {
+        "404": {
+            "title": "We could not find what you were looking for.",
+            "title2": "Page not found.",
+            "textone": "The link you followed may be incorrect or the page may have been deleted."
+        },
+        "500": {
+            "title": "We are sorry, an internal serveur error occured."
+        },
+        "validation": {
+            "number": "Field %s must be a number",
+            "radio": "Field %s isn't as expected",
+            "float": "Field %s must be a floating number",
+            "boolean": "Field %s must be a true or false",
+            "email": "Field %s isn't a valid email",
+            "date": "Field %s isn't a valid date",
+            "tel": "Field %s isn't a valid phone",
+            "color": "Field %s isn't a valid colour",
+            "password": "Field %s must be between 3 and 32 characters",
+            "url": "Field %s isn't a valid URL"
+        },
+        "title": "Error",
+        "contactAdmin": "Please contact your system administrator.",
+        "meanwhile": "Meanhile, you can ",
+        "goHome": "If you wish to return to the homepage, click here",
+        "goBack": "If you want to go back, click here",
+        "goBackText": "Go back",
+        "home": "Home",
+        "valueTooLong": "The given value is too long (>30)."
+    }
+}

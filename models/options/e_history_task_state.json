@@ -1,0 +1,44 @@
+[
+    {
+        "target": "e_task",
+        "relation": "belongsTo",
+        "foreignKey": "fk_id_task_history_state",
+        "as": "r_task_history_state",
+        "structureType": "auto_generate"
+    },
+    {
+        "target": "e_status",
+        "relation": "belongsTo",
+        "foreignKey": "fk_id_status_state",
+        "as": "r_state",
+        "showAs": "State",
+        "structureType": "relatedTo",
+        "usingField": [
+            {
+                "value": "f_name",
+                "type": "string"
+            }
+        ]
+    },
+    {
+        "target": "e_user",
+        "relation": "belongsTo",
+        "foreignKey": "fk_id_user_modified_by",
+        "as": "r_modified_by",
+        "showAs": "Modified by",
+        "structureType": "relatedTo",
+        "usingField": [
+            {
+                "value": "f_login",
+                "type": "string"
+            }
+        ]
+    },
+    {
+        "target": "e_status",
+        "relation": "belongsTo",
+        "foreignKey": "fk_id_status",
+        "as": "r_status_6_history_s_state",
+        "structureType": "auto_generate"
+    }
+]

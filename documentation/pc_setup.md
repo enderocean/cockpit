@@ -58,12 +58,12 @@ Launch GStreamer command to display camera flow in a simple window:
 <br>
 
 
-#### 1.3.3 - WebRTC Brodcast
+#### 1.3.3 - WebRTC Broadcast
 
-And then browse the broadcast WebRTC URL to share this window: http://drone1.mydomain.com/default/broadcast
+And then browse the broadcast WebRTC URL to share this window: https://drone1.mydomain.com/default/broadcast
 
 <br>
 
-Note. We are currently looking for solution to embed the flow in an application that can be shared through WebRTC. Any suggestion ?
+Note. We are currently looking for solution to embed the flow in a desktop application that can be shared through WebRTC properly. Today, we must share the whole desktop. Any suggestion ?
 
 

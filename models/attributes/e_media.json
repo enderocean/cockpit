@@ -1,0 +1,46 @@
+{
+    "id": {
+        "type": "INTEGER",
+        "autoIncrement": true,
+        "primaryKey": true
+    },
+    "version": {
+        "type": "INTEGER",
+        "defaultValue": 1
+    },
+    "createdBy": {
+        "type": "STRING",
+        "defaultValue": null,
+        "validate": false
+    },
+    "updatedBy": {
+        "type": "STRING",
+        "defaultValue": null,
+        "validate": false
+    },
+    "f_type": {
+        "type": "ENUM",
+        "values": [
+            "mail",
+            "notification",
+            "sms",
+            "task"
+        ],
+        "newmipsType": "enum",
+        "defaultValue": null,
+        "validate": true
+    },
+    "f_name": {
+        "type": "STRING",
+        "newmipsType": "string",
+        "defaultValue": null,
+        "validate": true,
+        "allowNull": true
+    },
+    "f_target_entity": {
+        "type": "STRING",
+        "newmipsType": "string",
+        "defaultValue": null,
+        "validate": true
+    }
+}

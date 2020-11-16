@@ -1,0 +1,9 @@
+[
+    {
+        "target": "e_media",
+        "relation": "hasMany",
+        "foreignKey": "fk_id_media_sms",
+        "as": "r_media",
+        "structureType": "auto_generate"
+    }
+]

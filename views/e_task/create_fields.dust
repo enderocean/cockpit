@@ -1,0 +1,141 @@
+<div id="fields" class="row">
+
+    <div data-field="f_title" class="fieldLineHeight col-xs-12">
+        <div class="form-group">
+            <label for="f_title" class="required">
+                {#__ key="entity.e_task.f_title"/}&nbsp;
+                {@inline_help field="f_title"}
+                <i data-field="f_title" class="inline-help fa fa-info-circle" style="color: #1085EE;"></i>
+                {/inline_help}
+            </label>
+            <input class="form-control input" placeholder='{#__ key="entity.e_task.f_title" /}' name="f_title" value="" type="text" maxlength="255" required="">
+        </div>
+    </div>
+    <div data-field="f_type" class="fieldLineHeight col-xs-12">
+        <div class="form-group">
+            <label for="f_type">
+                {#__ key="entity.e_task.f_type"/}&nbsp;
+                {@inline_help field="f_type"}
+                <i data-field="f_type" class="inline-help fa fa-info-circle" style="color: #1085EE;"></i>
+                {/inline_help}
+            </label>
+            <select class="form-control select" name="f_type" width="100%">
+                <option value="">
+                    {#__ key="select.default" /}
+                </option>
+                {#enum_radio.e_task.f_type}
+                {@eq key="manual" value="{.value}" }
+                <option value="{.value}" selected=""> {.translation} </option>
+                {:else}
+                <option value="{.value}"> {.translation} </option>
+                {/eq}
+                {/enum_radio.e_task.f_type}
+            </select>
+        </div>
+    </div>
+    <div data-field="f_planned_date" class="fieldLineHeight col-xs-12">
+        <div class="form-group">
+            <label for="f_planned_date">
+                {#__ key="entity.e_task.f_planned_date"/}&nbsp;
+                {@inline_help field="f_planned_date"}
+                <i data-field="f_planned_date" class="inline-help fa fa-info-circle" style="color: #1085EE;"></i>
+                {/inline_help}
+            </label>
+            <div class="input-group">
+                <div class="input-group-addon">
+                    <i class="fa fa-calendar"></i>
+                </div>
+                <input class="form-control input datepicker" placeholder='{#__ key="entity.e_task.f_planned_date" /}' name="f_planned_date" type="text">
+            </div>
+        </div>
+    </div>
+    <div data-field="f_execution_start_date" class="fieldLineHeight col-xs-12">
+        <div class="form-group">
+            <label for="f_execution_start_date">
+                {#__ key="entity.e_task.f_execution_start_date"/}&nbsp;
+                {@inline_help field="f_execution_start_date"}
+                <i data-field="f_execution_start_date" class="inline-help fa fa-info-circle" style="color: #1085EE;"></i>
+                {/inline_help}
+            </label>
+            <div class="input-group">
+                <div class="input-group-addon">
+                    <i class="fa fa-calendar"></i>
+                </div>
+                <input class="form-control input datepicker" placeholder='{#__ key="entity.e_task.f_execution_start_date" /}' name="f_execution_start_date" type="text">
+            </div>
+        </div>
+    </div>
+    <div data-field="f_execution_finish_date" class="fieldLineHeight col-xs-12">
+        <div class="form-group">
+            <label for="f_execution_finish_date">
+                {#__ key="entity.e_task.f_execution_finish_date"/}&nbsp;
+                {@inline_help field="f_execution_finish_date"}
+                <i data-field="f_execution_finish_date" class="inline-help fa fa-info-circle" style="color: #1085EE;"></i>
+                {/inline_help}
+            </label>
+            <div class="input-group">
+                <div class="input-group-addon">
+                    <i class="fa fa-calendar"></i>
+                </div>
+                <input class="form-control input datepicker" placeholder='{#__ key="entity.e_task.f_execution_finish_date" /}' name="f_execution_finish_date" type="text">
+            </div>
+        </div>
+    </div>
+    <div data-field="f_duration" class="fieldLineHeight col-xs-12">
+        <div class="form-group">
+            <label for="f_duration">
+                {#__ key="entity.e_task.f_duration"/}&nbsp;
+                {@inline_help field="f_duration"}
+                <i data-field="f_duration" class="inline-help fa fa-info-circle" style="color: #1085EE;"></i>
+                {/inline_help}
+            </label>
+            <input class="form-control input" data-custom-type="decimal" placeholder='{#__ key="entity.e_task.f_duration" /}' name="f_duration" value="" type="text">
+        </div>
+    </div>
+    <div data-field="f_data_flow" class="fieldLineHeight col-xs-12">
+        <div class="form-group">
+            <label for="f_data_flow">
+                {#__ key="entity.e_task.f_data_flow"/}&nbsp;
+                {@inline_help field="f_data_flow"}
+                <i data-field="f_data_flow" class="inline-help fa fa-info-circle" style="color: #1085EE;"></i>
+                {/inline_help}
+            </label>
+            <textarea class="form-control textarea regular-textarea" placeholder='{#__ key="entity.e_task.f_data_flow" /}' name="f_data_flow" id="f_data_flow_textareaid" type="text">{f_data_flow|s}</textarea>
+        </div>
+    </div>
+
+    <div data-field="f_robot" class="fieldLineHeight col-xs-12">
+        <div class="form-group">
+            <label for="r_robot">
+                {#__ key="entity.e_task.r_robot" /}&nbsp;
+                {@inline_help field="r_robot"}
+                <i data-field="r_robot" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+            <select class="ajax form-control" name="r_robot" data-source="robot" data-using="f_name" width="100%"></select>
+        </div>
+    </div>
+    <div data-field="f_program_file" class="fieldLineHeight col-xs-12">
+        <div class="form-group">
+            <label for="f_program_file">
+                {#__ key="entity.e_task.f_program_file"/}&nbsp;
+                {@inline_help field="f_program_file"}
+                <i data-field="f_program_file" class="inline-help fa fa-info-circle" style="color: #1085EE;"></i>
+                {/inline_help}
+            </label>
+            <div class="dropzone dropzone-field" id="f_program_file_dropzone" data-entity="e_task"></div>
+            <input type="hidden" name="f_program_file" id="f_program_file_dropzone_hidden" value="">
+        </div>
+    </div>
+    <div data-field="f_procedure" class="fieldLineHeight col-xs-12">
+        <div class="form-group">
+            <label for="f_procedure">
+                {#__ key="entity.e_task.f_procedure"/}&nbsp;
+                {@inline_help field="f_procedure"}
+                <i data-field="f_procedure" class="inline-help fa fa-info-circle" style="color: #1085EE;"></i>
+                {/inline_help}
+            </label>
+            <textarea class="form-control textarea regular-textarea" placeholder='{#__ key="entity.e_task.f_procedure" /}' name="f_procedure" id="f_procedure_textareaid" type="text">{f_procedure|s}</textarea>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,50 @@
+<table id="table_e_translation" data-url="/translation/datalist" class="dataTable table table-bordered table-striped animated fadeIn" style="display: none;">
+    <thead class="main">
+        <tr class="fields">
+            <th data-field="id" data-col="id">
+                {#__ key="entity.e_translation.id_entity"/}&nbsp;
+                {#__ key="entity.e_translation.label_entity"/}
+            </th>
+            <th data-field="f_language" data-col="f_language" data-type="string">
+                {#__ key="entity.e_translation.f_language"/}
+            </th>
+            <th data-field="f_value" data-col="f_value" data-type="string">
+                {#__ key="entity.e_translation.f_value"/}
+            </th>
+            {#actionAccess entity="translation" action="read"}
+            <th></th>
+            {/actionAccess}
+            {#actionAccess entity="translation" action="update"}
+            <th></th>
+            {/actionAccess}
+            {#actionAccess entity="translation" action="delete"}
+            <th></th>
+            {/actionAccess}
+        </tr>
+    </thead>
+    <thead class="filters">
+        <tr class="fields">
+            <th data-field="id" data-col="id">
+                {#__ key="entity.e_translation.id_entity"/}&nbsp;
+                {#__ key="entity.e_translation.label_entity"/}
+            </th>
+            <th data-field="f_language" data-col="f_language" data-type="string">
+                {#__ key="entity.e_translation.f_language"/}
+            </th>
+            <th data-field="f_value" data-col="f_value" data-type="string">
+                {#__ key="entity.e_translation.f_value"/}
+            </th>
+            {#actionAccess entity="translation" action="read"}
+            <th></th>
+            {/actionAccess}
+            {#actionAccess entity="translation" action="update"}
+            <th></th>
+            {/actionAccess}
+            {#actionAccess entity="translation" action="delete"}
+            <th></th>
+            {/actionAccess}
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>

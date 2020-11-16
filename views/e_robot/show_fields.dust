@@ -1,0 +1,99 @@
+<div id="fields" class="row">
+    <div data-field="f_current_status" class="fieldLineHeight col-xs-12">
+        <div class="form-group">
+            <label for="f_current_status">
+                {#__ key="entity.e_robot.f_current_status"/}&nbsp;
+                {@inline_help field="f_current_status"}
+                <i data-field="f_current_status" class="inline-help fa fa-info-circle" style="color: #1085EE;"></i>
+                {/inline_help}
+            </label>
+            {^f_current_status}
+            <input class="form-control input" placeholder='{#__ key="entity.e_robot.f_current_status" /}' name="f_current_status" type="text" readonly="">
+            {/f_current_status}
+            {#enum_radio.e_robot.f_current_status}
+            {@eq key=f_current_status value="{.value}" }
+            <input class="form-control input" placeholder='{#__ key="entity.e_robot.f_current_status" /}' name="f_current_status" value="{.translation}" type="text" readonly="">
+            {/eq}
+            {/enum_radio.e_robot.f_current_status}
+        </div>
+    </div>
+    <div data-field="f_name" class="fieldLineHeight col-xs-12">
+        <div class="form-group">
+            <label for="f_name">
+                {#__ key="entity.e_robot.f_name"/}&nbsp;
+                {@inline_help field="f_name"}
+                <i data-field="f_name" class="inline-help fa fa-info-circle" style="color: #1085EE;"></i>
+                {/inline_help}
+            </label>
+            <input class="form-control input" placeholder='{#__ key="entity.e_robot.f_name" /}' name="f_name" value="{f_name}" type="text" maxlength="255" readonly="">
+        </div>
+    </div>
+
+    <div data-field="f_api_credentials" class="fieldLineHeight col-xs-12">
+        <div class="form-group">
+            <label for="r_api_credentials">
+                {#__ key="entity.e_robot.r_api_credentials" /}&nbsp;
+                {@inline_help field="r_api_credentials"}
+                <i data-field="r_api_credentials" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+            <input class="form-control input" name="r_api_credentials" value="{r_api_credentials.f_client_name|string}" placeholder='{#__ key="entity.e_robot.r_api_credentials" /}' type="text" readonly="">
+        </div>
+    </div>
+    <div data-field="f_comment" class="fieldLineHeight col-xs-12">
+        <div class="form-group">
+            <label for="f_comment">
+                {#__ key="entity.e_robot.f_comment"/}&nbsp;
+                {@inline_help field="f_comment"}
+                <i data-field="f_comment" class="inline-help fa fa-info-circle" style="color: #1085EE;"></i>
+                {/inline_help}
+            </label>
+            <textarea readonly="readonly" class="show-textarea regular-textarea">{f_comment|s}</textarea>
+        </div>
+    </div>
+</div>
+<div class="actions">
+    <form action="/robot/delete" method="post">
+        <div class="quicklinks">
+            <a class="btn btn-default" href="javascript:history.back();">
+                <i class="fa fa-arrow-left"></i>&nbsp;&nbsp;
+                {#__ key="button.return"/}
+            </a>
+            {#actionAccess entity="robot" action="delete"}
+            <button class="btn btn-danger btn-confirm">
+                <i class="fa fa-trash-o fa-md">&nbsp;&nbsp;</i>
+                <span>
+                    {#__ key="button.delete"/}
+                </span>
+            </button>
+            <input name="id" type="hidden" value="{e_robot.id}" class="form-control">
+            {/actionAccess}
+            {#actionAccess entity="robot" action="update"}
+            <a href="/robot/update_form?id={e_robot.id}" class="btn btn-warning">
+                <i class="fa fa-pencil fa-md">&nbsp;&nbsp;</i>
+                <span>
+                    {#__ key="button.update"/}
+                </span>
+            </a>
+            {/actionAccess}
+            {^hideButton}
+            {#actionAccess entity="robot" action="create"}
+            <a href="/robot/create_form" class="btn btn-success">
+                <i class="fa fa-plus fa-md">&nbsp;&nbsp;</i>
+                <span>
+                    {#__ key="button.create"/}
+                </span>
+            </a>
+            {/actionAccess}
+            {#actionAccess entity="robot" action="read"}
+            <a href="/robot/list" type="submit" class="btn btn-primary">
+                <i class="fa fa-list fa-md">&nbsp;&nbsp;</i>
+                <span>
+                    {#__ key="button.list"/}
+                </span>
+            </a>
+            {/actionAccess}
+            {/hideButton}
+        </div>
+    </form>
+</div>
