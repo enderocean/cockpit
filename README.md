@@ -14,6 +14,9 @@ In order to set up the system, you need:
 - A gamepad (optional) : XBox One, XBox360, PS4, PS3, etc.
 
 
+![ENDER OCEAN Cokpit User Interface](https://github.com/enderocean/cockpit/img/snapshot_ui.png "ENDER OCEAN Cokpit User Interface")
+
+
 ## 2. How it works ?
 
 **Network** :  
