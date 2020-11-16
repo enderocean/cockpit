@@ -62,8 +62,34 @@ Launch GStreamer command to display camera flow in a simple window:
 
 And then browse the broadcast WebRTC URL to share this window: https://drone1.mydomain.com/default/broadcast
 
+Replace "mydomain.com" with your own DNS.
+
 <br>
 
 Note. We are currently looking for solution to embed the flow in a desktop application that can be shared through WebRTC properly. Today, we must share the whole desktop. Any suggestion ?
 
 
+## 2.0 Start control interface
+
+To use software with keyboard, open URL :
+
+https://drone1.mydomain.com/default/home?os=linux&lang=en-EN&gamepad_name=keyboard&wshost=drone1.mydomain.com&enable_keyboard=1
+
+Replace "mydomain.com" with your own DNS.
+
+<br>
+
+
+To use software with keyboard, open URL :
+
+https://drone1.mydomain.com/default/home?os=linux&lang=en-EN&gamepad_name=xboxone&gamepad_model=2&wshost=drone1.mydomain.com&enable_gamepad=1
+
+Replace "mydomain.com" with your own DNS and gamepad_name with one of the following values:
+* xboxone
+* xbox360
+* ps4
+* ps3
+
+Languages available are:
+* en-EN
+* fr-FR
