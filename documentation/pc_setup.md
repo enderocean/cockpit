@@ -13,6 +13,13 @@ Start Mavlink2REST on PC. It listens on port 8088.
 
 Node-RED is up and listening on port 1880. 
 
+Start Node-RED as root:
+
+	sudo su
+	cd ~
+	cd .node-red
+	node-red
+
 Process executes the following:
 * Exposes 2 websockets for listening to keyboard and gamepad events sent via Web browser
 * Sends mavlink control commands to the ROV using Mavlink2REST
@@ -22,6 +29,7 @@ Process executes the following:
 ![ENDER OCEAN Cockpit Node-RED](https://github.com/enderocean/cockpit/raw/main/img/snapshot_nodered.png "ENDER OCEAN Cockpit Node-RED")
 
 You can [Import flow](https://) in your local instance.
+
 
 <br>
 
