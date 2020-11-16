@@ -13,8 +13,11 @@ In order to set up the system, you need:
 - A BlueRov2 connected to your companion Pc
 - A gamepad (optional) : XBox One, XBox360, PS4, PS3, etc.
 
+<br>
 
 ![ENDER OCEAN Cockpit User Interface](https://github.com/enderocean/cockpit/raw/main/img/snapshot_ui.png "ENDER OCEAN Cockpit User Interface")
+
+<br>
 
 
 ## 2. How it works ?
