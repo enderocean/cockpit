@@ -5,6 +5,12 @@
 
 ENDER OCEAN cockpit is a software solution that enables gamers to control a ROV remotely. They connect to an online Website from home with a simple browser, define their preferences and start operating the remote robot located underwater miles away.  Solution works with BlueRov2 robots with quite a low latency using 4G connection.
 
+<br>
+
+![ENDER OCEAN Cockpit User Interface](https://github.com/enderocean/cockpit/raw/main/img/snapshot_ui.png "ENDER OCEAN Cockpit User Interface")
+
+<br>
+
 In order to set up the system, you need:
 - A domain name (for instance "enderocean.com")
 - A server under Linux (Ubuntu Server) hosted in the cloud with an access via SSH and NodeJS installed
@@ -14,11 +20,6 @@ In order to set up the system, you need:
 - A gamepad (optional) : XBox One, XBox360, PS4, PS3, etc.
 
 <br>
-
-![ENDER OCEAN Cockpit User Interface](https://github.com/enderocean/cockpit/raw/main/img/snapshot_ui.png "ENDER OCEAN Cockpit User Interface")
-
-<br>
-
 
 ## 2. How it works ?
 
