@@ -81,7 +81,7 @@ Replace "mydomain.com" with your own DNS.
 <br>
 
 
-To use software with keyboard, open URL :
+To use software with gamepad, open URL :
 
 https://drone1.mydomain.com/default/home?os=linux&lang=en-EN&gamepad_name=xboxone&gamepad_model=2&wshost=drone1.mydomain.com&enable_gamepad=1
 
