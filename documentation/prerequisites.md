@@ -7,7 +7,7 @@
 Install NodeJS 10.21.0 on Cloud server and Companion PC
 
         apt-get update
-        apt-get install build-essential libssl-dev cargo
+        apt-get install build-essential libssl-dev cargo npm
         curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
 
 Close your terminal and run
@@ -94,7 +94,7 @@ Check file is as followed : /etc/default/freelan
         # Configuration files to load.
         #
         # Values should be separated by spaces.
-        # Each entry must match a file at /etc/freelan/<entry>.conf
+        # Each entry must match a file at /etc/freelan/<entry>.cfg
         #
         CONFIGURATIONS="key"
 
@@ -104,7 +104,7 @@ Check file is as followed : /etc/default/freelan
 
 
 
-Edit file to expose freelan on port 12000 on local PC : /etc/freelan/key.conf
+Edit file to expose freelan on port 12000 on local PC : /etc/freelan/key.cfg
 
         [fscp]
         listen_on=0.0.0.0:12000
@@ -134,7 +134,7 @@ Check file is as followed : /etc/default/freelan
         # Configuration files to load.
         #
         # Values should be separated by spaces.
-        # Each entry must match a file at /etc/freelan/<entry>.conf
+        # Each entry must match a file at /etc/freelan/<entry>.cfg
         #
         CONFIGURATIONS="key"
 
@@ -144,7 +144,7 @@ Check file is as followed : /etc/default/freelan
 
 
 
-Edit file to expose freelan on port 12000 on Cloud server : /etc/freelan/key.conf
+Edit file to expose freelan on port 12000 on Cloud server : /etc/freelan/key.cfg
 
         [fscp]
         listen_on=0.0.0.0:12000
