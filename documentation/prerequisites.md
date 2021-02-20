@@ -4,9 +4,14 @@
 
 ### 1.1 - NodeJS
 
-Install NodeJS 10.21.0 on Cloud server
+Install NodeJS 10.21.0 on Cloud server and Companion PC
 
+        apt-get update
+        apt-get install build-essential libssl-dev cargo
         curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+
+Close your terminal and run
+
         nvm install 10.21.0
 
 
