@@ -44,6 +44,7 @@ Install PM2 on Cloud server to execute Ender Cockpit permanently
 Install Mavlink2REST on local companion PC
 
         cargo install mavlink2rest
+        sudo ln -s ~/.cargo/bin/mavlink2rest /usr/bin/mavlink2rest
 
 
 
